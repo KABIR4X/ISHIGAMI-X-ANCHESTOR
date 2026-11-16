@@ -402,6 +402,9 @@ class InstaChatClient extends EventEmitter {
    * @returns {'image'|'audio'|'video'}
    */
   _resolveAttachmentType(item, options = {}) {
+    if (options.isMusic || options.music || (item && (item.isMusic || item.music))) {
+      return 'music';
+    }
     if (options.isAudio || options.audio || options.voice || (item && (item.isAudio || item.audio || item.voice))) {
       return 'audio';
     }
@@ -466,7 +469,9 @@ class InstaChatClient extends EventEmitter {
     }
 
     const type = this._resolveAttachmentType(rawAttachment, itemOpts);
-    if (type === 'audio') {
+    if (type === 'music') {
+      return this.sendMusic(conversationId, rawAttachment, itemOpts);
+    } else if (type === 'audio') {
       return this.sendAudio(conversationId, rawAttachment, itemOpts);
     } else if (type === 'video') {
       return this.sendVideo(conversationId, rawAttachment, itemOpts);
@@ -633,6 +638,18 @@ class InstaChatClient extends EventEmitter {
 
   async sendSticker(conversationId, stickerId, options = {}) {
     return this.sharing.sendSticker(conversationId, stickerId, options);
+  }
+
+  async searchMusic(query, options = {}) {
+    return this.sharing.searchMusic(query, options);
+  }
+
+  async sendMusic(conversationId, audioAssetIdOrQuery, options = {}) {
+    return this.sharing.sendMusic(conversationId, audioAssetIdOrQuery, options);
+  }
+
+  async sendMusicSticker(conversationId, audioAssetIdOrQuery, options = {}) {
+    return this.sharing.sendMusic(conversationId, audioAssetIdOrQuery, options);
   }
 
   async sendLink(conversationId, textOrUrl, options = {}) {

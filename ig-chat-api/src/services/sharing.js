@@ -406,6 +406,168 @@ class SharingService {
   }
 
   /**
+   * Searches music tracks available for Instagram Direct music stickers using
+   * the modern Web GraphQL query (IGDComposerRichContentMusicSearchQuery).
+   *
+   * @param {string} query - Music search keyword (e.g. song title or artist)
+   * @param {Object} [options]
+   * @param {string} [options.product='IG_DIRECT_MUSIC_STICKER']
+   * @param {number} [options.limit=15] - Maximum number of tracks to return
+   * @param {string} [options.refererThreadId] - Optional thread ID for GraphQL referer
+   * @returns {Promise<Array<{id: string, audioAssetId: string, audioClusterId: string|null, title: string, artist: string, displayArtist: string, durationMs: number, duration: number, coverUrl: string|null, previewUrl: string|null, isTrending: boolean, raw: Object}>>}
+   */
+  async searchMusic(query, options = {}) {
+    const validQuery = validateSearchQuery(query);
+    const product = options.product || 'IG_DIRECT_MUSIC_STICKER';
+    const limit = Math.min(Math.max(Number(options.limit) || 15, 1), 50);
+
+    const gqlData = await this._postGraphQL(
+      'IGDComposerRichContentMusicSearchQuery',
+      Endpoints.GRAPHQL_DOCS.SEARCH_MUSIC,
+      {
+        params: {
+          product,
+          q: validQuery
+        }
+      },
+      options.refererThreadId || null
+    );
+
+    const items = (gqlData && gqlData.xfb_ig_audio_search && Array.isArray(gqlData.xfb_ig_audio_search.items))
+      ? gqlData.xfb_ig_audio_search.items
+      : [];
+
+    return items
+      .filter((item) => item && item.track)
+      .slice(0, limit)
+      .map((item) => {
+        const track = item.track || {};
+        const meta = item.metadata || {};
+        const durationMs = Number(track.duration_in_ms || 0);
+        return {
+          id: String(track.id || ''),
+          audioAssetId: String(track.audio_cluster_id || track.id || ''),
+          audioClusterId: track.audio_cluster_id ? String(track.audio_cluster_id) : null,
+          title: track.title || '',
+          artist: track.display_artist || '',
+          displayArtist: track.display_artist || '',
+          durationMs,
+          duration: Math.round(durationMs / 1000),
+          coverUrl: track.cover_artwork_uri || null,
+          previewUrl: track.web_30s_preview_download_url || null,
+          isTrending: Boolean(meta.is_trending_in_clips),
+          raw: item
+        };
+      });
+  }
+
+  /**
+   * Sends a music sticker (by audio asset ID, audio cluster ID, track object, or search query)
+   * to an Instagram Direct conversation thread. Uses modern Web GraphQL mutation (IGDirectMusicStickerShareMutation).
+   *
+   * @param {string} threadId - Target conversation thread ID
+   * @param {string|number|Object} audioAssetIdOrQuery - Audio asset ID, cluster ID, track object, or search query
+   * @param {Object} [options]
+   * @param {boolean} [options.search=false] - Force treating the second argument as a query to search
+   * @param {string} [options.replyToItemId] - Message item ID to reply to
+   * @param {string} [options.replyToMessageId] - Alias for replyToItemId
+   * @param {string} [options.forwardedFromThreadId]
+   * @param {boolean} [options.isForwardedFromOwnMessage]
+   * @returns {Promise<Message>}
+   */
+  async sendMusic(threadId, audioAssetIdOrQuery, options = {}) {
+    const validThreadId = validateThreadId(threadId);
+    if (audioAssetIdOrQuery === undefined || audioAssetIdOrQuery === null) {
+      throw new ValidationError('audioAssetIdOrQuery must be provided.', { field: 'audioAssetIdOrQuery' });
+    }
+
+    let targetAssetId = '';
+    let resolvedTrackInfo = null;
+
+    if (typeof audioAssetIdOrQuery === 'object') {
+      const obj = audioAssetIdOrQuery;
+      targetAssetId = obj.audioAssetId || obj.audioClusterId || obj.audio_asset_id || obj.audio_cluster_id || (obj.track && (obj.track.audio_cluster_id || obj.track.id)) || obj.id;
+      resolvedTrackInfo = {
+        title: obj.title || (obj.track && obj.track.title) || null,
+        artist: obj.artist || obj.displayArtist || (obj.track && obj.track.display_artist) || null,
+        coverUrl: obj.coverUrl || obj.cover_artwork_uri || (obj.track && obj.track.cover_artwork_uri) || null,
+        previewUrl: obj.previewUrl || obj.web_30s_preview_download_url || (obj.track && obj.track.web_30s_preview_download_url) || null
+      };
+    } else {
+      const rawStr = String(audioAssetIdOrQuery).trim();
+      if (!rawStr) {
+        throw new ValidationError('audioAssetIdOrQuery cannot be an empty string.', { field: 'audioAssetIdOrQuery' });
+      }
+
+      // If search is explicitly requested, or string contains spaces / non-digit characters, search first
+      if (options.search || /\s/.test(rawStr) || !/^\d+$/.test(rawStr)) {
+        const searchResults = await this.searchMusic(rawStr, { limit: 5, refererThreadId: validThreadId });
+        if (!searchResults.length) {
+          throw new InstaChatError(`No music found matching query "${rawStr}".`);
+        }
+        const topResult = searchResults[0];
+        targetAssetId = topResult.audioAssetId;
+        resolvedTrackInfo = topResult;
+      } else {
+        targetAssetId = rawStr;
+      }
+    }
+
+    if (!targetAssetId || !String(targetAssetId).trim()) {
+      throw new ValidationError('Unable to resolve a valid audio asset ID.', { field: 'audioAssetId' });
+    }
+
+    const cleanAssetId = String(targetAssetId).trim();
+    const currentUserId = this.session ? this.session.userId : null;
+    const offlineId = this._generateOfflineId();
+    const replyId = options.replyToItemId || options.replyToMessageId || null;
+
+    const gqlData = await this._postGraphQL(
+      'IGDirectMusicStickerShareMutation',
+      Endpoints.GRAPHQL_DOCS.SEND_MUSIC,
+      {
+        send_data: {
+          forwarded_from_thread_id: options.forwardedFromThreadId || null,
+          is_forwarded_from_own_message: options.isForwardedFromOwnMessage || null,
+          offline_threading_id: offlineId,
+          recipient_users: options.recipientUsers || null,
+          reply_to_message_id: replyId,
+          thread_id: validThreadId
+        },
+        data: {
+          audio_asset_id: cleanAssetId
+        }
+      },
+      validThreadId
+    );
+
+    const node = gqlData && gqlData.ig_direct_music_sticker_share_with_slide_msg_response;
+    const msgId = (node && (node.message_id || node.id)) || offlineId;
+
+    return Message.fromRaw({
+      item_id: msgId,
+      thread_id: validThreadId,
+      user_id: currentUserId,
+      timestamp: Date.now() * 1000,
+      item_type: 'music_sticker_xma',
+      music_sticker: {
+        audio_asset_id: cleanAssetId,
+        title: resolvedTrackInfo ? (resolvedTrackInfo.title || null) : null,
+        display_artist: resolvedTrackInfo ? (resolvedTrackInfo.artist || resolvedTrackInfo.displayArtist || null) : null,
+        cover_artwork_uri: resolvedTrackInfo ? (resolvedTrackInfo.coverUrl || null) : null,
+        web_30s_preview_download_url: resolvedTrackInfo ? (resolvedTrackInfo.previewUrl || null) : null
+      }
+    }, currentUserId);
+  }
+
+  /**
+   * Alias for sendMusic.
+   */
+  async sendMusicSticker(threadId, audioAssetIdOrQuery, options = {}) {
+    return this.sendMusic(threadId, audioAssetIdOrQuery, options);
+  }
+
+  /**
    * Shares a web link with rich preview card inside a conversation thread.
    * Uses IGDirectLinkShareMutation with REST fallback.
    *

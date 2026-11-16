@@ -118,6 +118,21 @@ class Message {
       };
     }
 
+    if (data.item_type === 'music_sticker_xma' || data.item_type === 'music_sticker' || data.music_sticker || data.audio_asset) {
+      const ms = data.music_sticker || data.audio_asset || data;
+      return {
+        type: 'music',
+        id: ms.audio_asset_id || ms.audioAssetId || ms.id ? String(ms.audio_asset_id || ms.audioAssetId || ms.id) : null,
+        audioAssetId: ms.audio_asset_id || ms.audioAssetId || ms.id ? String(ms.audio_asset_id || ms.audioAssetId || ms.id) : null,
+        title: ms.title || null,
+        artist: ms.display_artist || ms.artist || null,
+        displayArtist: ms.display_artist || ms.artist || null,
+        url: ms.web_30s_preview_download_url || ms.audio_src || ms.url || ms.previewUrl || null,
+        previewUrl: ms.web_30s_preview_download_url || ms.audio_src || ms.url || ms.previewUrl || null,
+        coverUrl: ms.cover_artwork_uri || ms.coverUrl || null
+      };
+    }
+
     return null;
   }
 
@@ -298,6 +313,10 @@ class Message {
       };
     }
     return null;
+  }
+
+  get music() {
+    return this.media && this.media.type === 'music' ? this.media : null;
   }
 
   static fromRaw(raw, currentUserId = null, threadUsers = []) {
