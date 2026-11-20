@@ -269,6 +269,30 @@ function buildApi(client) {
 			return client.sendAudioFromUrl(String(threadID), String(url));
 		},
 
+		async sendMusic(threadID, audioAssetIdOrQuery, options = {}, callback) {
+			if (typeof options === 'function') {
+				callback = options;
+				options = {};
+			}
+			try {
+				const res = await client.sendMusic(String(threadID), audioAssetIdOrQuery, options);
+				if (typeof callback === 'function') callback(null, res);
+				return res;
+			}
+			catch (err) {
+				if (typeof callback === 'function') callback(err);
+				throw err;
+			}
+		},
+
+		async sendMusicSticker(threadID, audioAssetIdOrQuery, options = {}, callback) {
+			return this.sendMusic(threadID, audioAssetIdOrQuery, options, callback);
+		},
+
+		async searchMusic(query, options = {}) {
+			return client.searchMusic(query, options);
+		},
+
 		async sendImage(threadID, fileOrUrl) {
 			return client.sendImage(String(threadID), fileOrUrl);
 		},
