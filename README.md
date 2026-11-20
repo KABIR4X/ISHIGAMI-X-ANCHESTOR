@@ -260,7 +260,7 @@ the same `config.name` is *shadowed*, not dropped: it stays reachable through
 its unique aliases (aliases are claimed one by one across names and aliases —
 a taken alias is skipped with a warning, the rest still register). A shadowed
 module with no free alias left loads *dormant*: counted in the boot summary
-(`92 commands and 4 events loaded (0 shadowed, 0 dormant)`) with the reason
+(`93 commands and 4 events loaded (0 shadowed, 0 dormant)`) with the reason
 logged. Unloading is ownership-exact — removing the winner frees only its name
 and its own aliases, and reloading a shadowed file afterwards lets it win the
 name. `-cmd collisions` prints the full registry story, `-cmd reloadall`
@@ -440,7 +440,7 @@ anchestor/
 │   └── data/                 # threads.json, users.json, global.json
 ├── ig-chat-api/              # bundled Instagram chat client (see Credits)
 ├── scripts/
-│   ├── cmds/                 # commands (92)
+│   ├── cmds/                 # commands (93)
 │   ├── events/               # events
 │   └── migrate-to-mongo.js   # json -> mongodb import (npm run migrate:mongo)
 ├── downloads/                # -dl output (git-ignored except .gitkeep)

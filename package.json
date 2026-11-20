@@ -1,6 +1,6 @@
 {
   "name": "anchestor",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "anchestor \u2014 an Instagram DM bot. Developed by xemonbae01",
   "main": "index.js",
   "scripts": {

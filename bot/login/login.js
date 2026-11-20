@@ -495,6 +495,20 @@ async function start() {
 	async function dispatchMessage(msg) {
 		if (msg.isSelf && !configIgApi.selfListen) return;
 		const event = normalizeMessage(msg);
+		// TEMPORARY diagnostic for the reply bug (v2.3.0): when a command
+		// arrives, log what the poll actually saw — the parsed reply plus
+		// the raw payload's shape — so the next -unsend test shows whether
+		// the reply data is missing from the payload or just misparsed.
+		// remove once replies are proven working.
+		if (event.body && config.prefix && event.body.startsWith(config.prefix)) {
+			const raw = msg.raw && typeof msg.raw === 'object' ? msg.raw : {};
+			const rawKeys = Object.keys(raw);
+			const replyBits = {};
+			for (const k of rawKeys) if (/repl|quote/i.test(k)) replyBits[k] = raw[k];
+			global.utils.log.dev('REPLY-DBG',
+				`cmd "${event.body.slice(0, 30)}" replyTo=${JSON.stringify(event.messageReply)}` +
+				` rawKeys=[${rawKeys.join(',')}] rawReply=${JSON.stringify(replyBits).slice(0, 300)}`);
+		}
 		const info = await getThreadInfoCached(client, event.threadID);
 		event.isGroup = info.isGroup;
 		event.participantIDs = info.participantIDs;
@@ -560,12 +574,8 @@ async function start() {
 		`anchestor is online — ${loadCounts.commands} commands, ${loadCounts.events} events` +
 		` (${loadCounts.shadowed} shadowed, ${loadCounts.dormant} dormant), prefix "${config.prefix}",` +
 		` database ${((config.database || {}).type || 'json')}, session ${client.session && client.session.sessionPath ? client.session.sessionPath : 'data/session.json'}`);
-	// startup banner — logo, version, notices, update check (never throws)
-	try {
-		const pkg = require(path.join(rootDir, 'package.json'));
-		await require('./banner').printBanner({ root: rootDir, version: pkg.version || '?' });
-	}
-	catch { /* the banner is cosmetic, the bot is already up */ }
+	// the startup banner already printed in index.js, before this process
+	// even started — nothing to do here
 	// self-updates: watch the repo for new code and restart into it
 	// (no-op unless config.update.auto.enabled — see bot/login/autoUpdate.js)
 	try {

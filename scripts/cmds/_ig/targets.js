@@ -78,7 +78,10 @@ async function resolveTargets({ api, event, args = [], includeSelf = true }) {
 		}
 	}
 
-	if (!found.length && includeSelf && event.senderID) {
+	// self fallback only when no target was attempted at all — if the user
+	// named someone and the lookup failed, answering with their own id
+	// next to "not found" just confuses things
+	if (!found.length && !notFound.length && includeSelf && event.senderID) {
 		push({
 			id: String(event.senderID),
 			username: event.senderUsername || null,
