@@ -336,20 +336,35 @@ changes and unsends go through the `logsbot` event (`LOGS` tag), gated by
 `envEvents.logsbot.allow` in `configCommands.json` and the `logEvents`
 toggles in `config.json`.
 
+## Startup banner
+
+When the bot logs in it prints a startup banner — the ANCHESTOR logo,
+version, repo link, and a couple of notices. It also checks GitHub for a
+newer release (one small file off raw.githubusercontent, no api quota)
+and prints `UPDATE AVAILABLE: vX.Y.Z — run -update to upgrade` when one
+is out. The banner never blocks the boot: if the check fails it just
+prints without the update line.
+
 ## Client key (ig-chat-api)
 
 The vendored `ig-chat-api` in this repo is obfuscated and locked to this
-bot: it refuses to start without the client key. Set it in `.env`
-(`.env` is git-ignored — the key never goes in the repo):
+bot: it refuses to start without a valid client key. The key is embedded
+in the client itself, AES-256-GCM encrypted — the passphrase is split
+into fragments, the aes key comes from PBKDF2 (200k rounds), and the
+decrypted key still has to match a baked-in hash. No `.env` entry is
+needed; the bot just starts.
+
+An explicit key always wins over the embedded one, so rotation without a
+rebuild still works — set it in `.env` (`.env` is git-ignored, the key
+never goes in the repo):
 
 ```
 IG_CLIENT_KEY=<your key>
 ```
 
-Without it the bot fails at login with `ig-chat-api: invalid or missing
-client key`. If the key is lost, the client has to be rebuilt with a new
-one — the readable source lives outside this repo and the build bakes a
-fresh key hash in.
+To change the embedded key itself, the client has to be rebuilt with a
+new secret — the readable source lives outside this repo and the build
+bakes a fresh key hash and encrypted blob in.
 
 Honest limits: obfuscation plus the key check stops casual copying — lift
 the folder into another bot and it won't run. A determined reverser with

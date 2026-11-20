@@ -424,8 +424,9 @@ async function start() {
 
 	const { InstaChatClient } = require('../../ig-chat-api');
 	const sessionOpts = resolveSessionOptions(config, configIgApi);
-	// the vendored client only runs on this bot — the key lives in .env
-	// (IG_CLIENT_KEY), never in the repo
+	// the vendored client only runs on this bot — the key is embedded in
+	// the client itself, encrypted. IG_CLIENT_KEY in .env is just an
+	// override (it wins over the embedded key when set)
 	sessionOpts.clientKey = process.env.IG_CLIENT_KEY;
 	const client = new InstaChatClient(sessionOpts);
 	global.Anchestor.igApi = client;
@@ -535,6 +536,12 @@ async function start() {
 		`anchestor is online — ${loadCounts.commands} commands, ${loadCounts.events} events` +
 		` (${loadCounts.shadowed} shadowed, ${loadCounts.dormant} dormant), prefix "${config.prefix}",` +
 		` database ${((config.database || {}).type || 'json')}, session ${client.session && client.session.sessionPath ? client.session.sessionPath : 'data/session.json'}`);
+	// startup banner — logo, version, notices, update check (never throws)
+	try {
+		const pkg = require(path.join(rootDir, 'package.json'));
+		await require('./banner').printBanner({ root: rootDir, version: pkg.version || '?' });
+	}
+	catch { /* the banner is cosmetic, the bot is already up */ }
 	// self-updates: watch the repo for new code and restart into it
 	// (no-op unless config.update.auto.enabled — see bot/login/autoUpdate.js)
 	try {
