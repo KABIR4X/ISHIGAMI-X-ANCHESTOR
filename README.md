@@ -152,7 +152,6 @@ Default prefix is `-`. Type just `prefix` in a chat to see the current one.
 | `userinfo [@user]` | profile + friendship info |
 | `spy [@user]` | deep intel: profile, counts, friendship status, current note, pic |
 | `threadinfo` | this thread's info, members and nicknames |
-| `uptime` | how long the bot has been running |
 | `count` | your tracked message count |
 | `prefix <p> / reset / <p> -g` | change prefix (reaction confirm) |
 | `admin list/add/remove` | manage bot admins |
@@ -219,7 +218,6 @@ Default prefix is `-`. Type just `prefix` in a chat to see the current one.
 | `autosetname <template>` | auto-nickname new members |
 | `adboxonly on/off` | only group admins can use the bot in this thread |
 | `setrole <cmd> <0/1/default>` | per-thread command roles (bot-admin commands can't change) |
-| `setlang <code> / list` | bot language (bot admin) |
 | `setrankup <text/reset/on/off>` | custom level-up message, or turn it off |
 | `thread find/ban/unban/info` | manage stored threads |
 | `user find/ban/unban` | manage stored users (bot admin for bans) |
@@ -232,7 +230,6 @@ Default prefix is `-`. Type just `prefix` in a chat to see the current one.
 | `tarot [card]` | tarot reading from a built-in 78-card deck |
 | `anc` | system dashboard — uptime, CPU, RAM, disk |
 | `system` | detailed hardware / process readout |
-| `sc @user` | share someone's profile card (`sharecontact`) |
 | `restart` | restart the bot (bot admin) |
 | `update [check\|now]` | check for new code, or update + restart into it (bot admin) |
 | `eval <code>` | run js (bot admin only) |
@@ -263,7 +260,7 @@ the same `config.name` is *shadowed*, not dropped: it stays reachable through
 its unique aliases (aliases are claimed one by one across names and aliases —
 a taken alias is skipped with a warning, the rest still register). A shadowed
 module with no free alias left loads *dormant*: counted in the boot summary
-(`94 commands and 4 events loaded (0 shadowed, 0 dormant)`) with the reason
+(`91 commands and 4 events loaded (0 shadowed, 0 dormant)`) with the reason
 logged. Unloading is ownership-exact — removing the winner frees only its name
 and its own aliases, and reloading a shadowed file afterwards lets it win the
 name. `-cmd collisions` prints the full registry story, `-cmd reloadall`
@@ -316,6 +313,49 @@ SIGINT/SIGTERM the bot disconnects, flushes the database and exits 0
 the flush. The json store serializes writes per file and keeps a `.bak` of
 the previous good content; a corrupt data file falls back to its backup
 instead of crashing the boot.
+
+## Logging
+
+Every line goes to the console with a full date-time stamp, and — unless
+`log.file` is off — to a plain-text file in `logs/`, one per day
+(`logs/anchestor-YYYY-MM-DD.log`), pruned after `log.keepDays` (default 7).
+`log.level` in `config.json` picks what shows: `error`, `warn`, `info`, or
+`debug` (default — everything, including each incoming message and every
+blocked attempt). Set it to `info` to quiet the per-message spam.
+
+Every command run gets one audit line:
+
+```
+[2026-11-20 21:45:03] [INFO] CMD » -rank by @alice (111) in t1 [12ms]
+```
+
+Failed runs log the same line with `FAILED:` plus the error and stack.
+Blocked attempts (banned user/thread, role gate, cooldown, adbox-only,
+per-thread command bans) log at debug level with a `BLOCK` tag. Thread
+changes and unsends go through the `logsbot` event (`LOGS` tag), gated by
+`envEvents.logsbot.allow` in `configCommands.json` and the `logEvents`
+toggles in `config.json`.
+
+## Client key (ig-chat-api)
+
+The vendored `ig-chat-api` in this repo is obfuscated and locked to this
+bot: it refuses to start without the client key. Set it in `.env`
+(`.env` is git-ignored — the key never goes in the repo):
+
+```
+IG_CLIENT_KEY=<your key>
+```
+
+Without it the bot fails at login with `ig-chat-api: invalid or missing
+client key`. If the key is lost, the client has to be rebuilt with a new
+one — the readable source lives outside this repo and the build bakes a
+fresh key hash in.
+
+Honest limits: obfuscation plus the key check stops casual copying — lift
+the folder into another bot and it won't run. A determined reverser with
+time can still pull it apart; nothing in a public repo is unbreakable.
+The base library is MIT (jarif098, see `ig-chat-api/LICENSE`) — anyone can
+still use the original; this protects this bot's vendored copy.
 
 ## MongoDB
 
@@ -386,7 +426,7 @@ anchestor/
 │   └── data/                 # threads.json, users.json, global.json
 ├── ig-chat-api/              # bundled Instagram chat client (see Credits)
 ├── scripts/
-│   ├── cmds/                 # commands (94)
+│   ├── cmds/                 # commands (91)
 │   ├── events/               # events
 │   └── migrate-to-mongo.js   # json -> mongodb import (npm run migrate:mongo)
 ├── downloads/                # -dl output (git-ignored except .gitkeep)

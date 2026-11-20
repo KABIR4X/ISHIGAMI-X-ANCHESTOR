@@ -12,6 +12,12 @@ module.exports = {
 		if (!allow) return;
 		if (global.Anchestor.config.logEvents && global.Anchestor.config.logEvents.disableAll) return;
 		const log = global.utils.log;
+		// unsends only carry ids, never the text — -resend keeps the content
+		if (event.type === 'message_unsend') {
+			if (global.Anchestor.config.logEvents && global.Anchestor.config.logEvents.messageUnsend)
+				log.info("LOGS", `thread ${event.threadID}: ${event.senderID} unsent message ${event.messageID}`);
+			return;
+		}
 		if (event.changes && event.changes.title)
 			log.info("LOGS", `thread ${event.threadID} title changed: "${event.changes.title.from}" -> "${event.changes.title.to}"`);
 		if (event.changes && event.changes.themeId)

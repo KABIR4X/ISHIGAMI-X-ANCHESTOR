@@ -269,30 +269,6 @@ function buildApi(client) {
 			return client.sendAudioFromUrl(String(threadID), String(url));
 		},
 
-		async sendMusic(threadID, audioAssetIdOrQuery, options = {}, callback) {
-			if (typeof options === 'function') {
-				callback = options;
-				options = {};
-			}
-			try {
-				const res = await client.sendMusic(String(threadID), audioAssetIdOrQuery, options);
-				if (typeof callback === 'function') callback(null, res);
-				return res;
-			}
-			catch (err) {
-				if (typeof callback === 'function') callback(err);
-				throw err;
-			}
-		},
-
-		async sendMusicSticker(threadID, audioAssetIdOrQuery, options = {}, callback) {
-			return this.sendMusic(threadID, audioAssetIdOrQuery, options, callback);
-		},
-
-		async searchMusic(query, options = {}) {
-			return client.searchMusic(query, options);
-		},
-
 		async sendImage(threadID, fileOrUrl) {
 			return client.sendImage(String(threadID), fileOrUrl);
 		},
@@ -448,6 +424,9 @@ async function start() {
 
 	const { InstaChatClient } = require('../../ig-chat-api');
 	const sessionOpts = resolveSessionOptions(config, configIgApi);
+	// the vendored client only runs on this bot — the key lives in .env
+	// (IG_CLIENT_KEY), never in the repo
+	sessionOpts.clientKey = process.env.IG_CLIENT_KEY;
 	const client = new InstaChatClient(sessionOpts);
 	global.Anchestor.igApi = client;
 

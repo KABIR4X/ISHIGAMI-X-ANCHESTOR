@@ -1,1080 +1,1080 @@
 {
-    "de": [
-        {
-          "cauhoi": "Ai là nhân vật chính trong bộ phim hoạt hình 'Tom and Jerry'?",
-          "A": "Tom",
-          "B": "Jerry",
-          "C": "Spike",
-          "D": "Butch",
-          "dapan": "B",
-          "giaithich": "'Jerry' là chuột làm bạn với 'Tom' - mèo trong loạt phim hoạt hình nổi tiếng 'Tom and Jerry'.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Loài động vật nào có khả năng bay?",
-          "A": "Hươu cao cổ",
-          "B": "Chim én",
-          "C": "Cá voi",
-          "D": "Rùa biển",
-          "dapan": "B",
-          "giaithich": "Chim én là loài chim có khả năng bay cao và có thể bay xa trong các chuyến di cư mùa đông.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Bác sĩ nổi tiếng nào phát minh ra vắc xin cho bệnh dại?",
-          "A": "Alexander Fleming",
-          "B": "Albert Einstein",
-          "C": "Louis Pasteur",
-          "D": "Isaac Newton",
-          "dapan": "C",
-          "giaithich": "Louis Pasteur là nhà khoa học người Pháp, nổi tiếng với công trình nghiên cứu và phát triển vắc xin cho bệnh dại.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Quốc gia nào được biết đến với biểu tượng 'Kim tự tháp Giza'?",
-          "A": "Ấn Độ",
-          "B": "Ai Cập",
-          "C": "Mexico",
-          "D": "Trung Quốc",
-          "dapan": "B",
-          "giaithich": "Kim tự tháp Giza là một trong Bảy kỳ quan của thế giới cổ đại, nằm tại Ai Cập.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là người sáng lập ra Microsoft?",
-          "A": "Bill Gates",
-          "B": "Steve Jobs",
-          "C": "Jeff Bezos",
-          "D": "Mark Zuckerberg",
-          "dapan": "A",
-          "giaithich": "Bill Gates là nhà sáng lập Microsoft, một trong những công ty công nghệ lớn nhất và nổi tiếng nhất thế giới.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là người đầu tiên đặt chân lên mặt trăng?",
-          "A": "Neil Armstrong",
-          "B": "Buzz Aldrin",
-          "C": "Yuri Gagarin",
-          "D": "Alan Shepard",
-          "dapan": "A",
-          "giaithich": "Neil Armstrong là phi hành gia Mỹ đầu tiên đặt chân lên mặt trăng trong lịch sử vào ngày 20 tháng 7 năm 1969.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Vua nào được biết đến với biệt hiệu 'Vua Son Goku'?",
-          "A": "Vua Arthur",
-          "B": "Vua Midas",
-          "C": "Vua Solomon",
-          "D": "Vua Trưng Vương",
-          "dapan": "B",
-          "giaithich": "'Vua Midas' là biệt danh của vị vua trong thần thoại Hy Lạp, được cho là có khả năng biến mọi vật thành vàng.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Loài cây nào được biết đến với tên gọi 'Cây hoa hồng của phương Đông'?",
-          "A": "Hoa hồng",
-          "B": "Hoa Sứ",
-          "C": "Cherry",
-          "D": "Hoa Mai",
-          "dapan": "C",
-          "giaithich": "Cherry là loại cây có nguồn gốc từ phương Đông, được biết đến với hoa đẹp và quả ngọt.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Tác phẩm 'Bản tình ca mùa đông' được sáng tác bởi nhà soạn nhạc nổi tiếng nào?",
-          "A": "Ludwig van Beethoven",
-          "B": "Johann Sebastian Bach",
-          "C": "Wolfgang Amadeus Mozart",
-          "D": "Pyotr Ilyich Tchaikovsky",
-          "dapan": "D",
-          "giaithich": "'Bản tình ca mùa đông' là một trong những tác phẩm nổi tiếng của Tchaikovsky, nổi bật với giai điệu mùa đông huyền thoại.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là người sáng lập ra Facebook?",
-          "A": "Bill Gates",
-          "B": "Steve Jobs",
-          "C": "Jeff Bezos",
-          "D": "Mark Zuckerberg",
-          "dapan": "D",
-          "giaithich": "Mark Zuckerberg là người sáng lập và CEO của Facebook, mạng xã hội lớn nhất thế giới.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Quốc gia nào nằm ở châu Á?",
-          "A": "Brazil",
-          "B": "Egypt",
-          "C": "Vietnam",
-          "D": "Australia",
-          "dapan": "C",
-          "giaithich": "Việt Nam là quốc gia nằm ở khu vực Đông Nam Á, không phải là châu Á.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Thành phố nào được gọi là 'Thủ đô của nụ cười'?",
-          "A": "Sydney",
-          "B": "Moscow",
-          "C": "Bangkok",
-          "D": "Rio de Janeiro",
-          "dapan": "C",
-          "giaithich": "Bangkok, thủ đô của Thái Lan, được biết đến với biệt danh 'Thủ đô của nụ cười' do môi trường thân thiện và vui vẻ của người dân.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là tác giả của tác phẩm 'Nhà giả kim'?",
-          "A": "Paulo Coelho",
-          "B": "Gabriel Garcia Marquez",
-          "C": "Haruki Murakami",
-          "D": "Leo Tolstoy",
-          "dapan": "A",
-          "giaithich": "'Nhà giả kim' là một trong những tác phẩm nổi tiếng nhất của Paulo Coelho, xuất bản lần đầu năm 1988.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Con vật nào có khả năng leo cây tốt nhất?",
-          "A": "Chim",
-          "B": "Sóc",
-          "C": "Hươu cao cổ",
-          "D": "Nhện",
-          "dapan": "B",
-          "giaithich": "Sóc là loài động vật có khả năng leo cây với bộ móng vuốt nhọn và dẻo.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là người phát minh ra chiếc xe lăn?",
-          "A": "Thomas Edison",
-          "B": "Galileo Galilei",
-          "C": "Isaac Newton",
-          "D": "Benjamin Franklin",
-          "dapan": "A",
-          "giaithich": "Thomas Edison, một nhà phát minh và doanh nhân nổi tiếng người Mỹ, phát minh ra chiếc xe lăn để giúp người khuyết tật di chuyển.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Loài động vật nào sống lâu nhất?",
-          "A": "Chuột",
-          "B": "Sao la",
-          "C": "Voi",
-          "D": "Rùa",
-          "dapan": "D",
-          "giaithich": "Rùa là một trong những loài động vật có tuổi thọ lâu nhất trên trái đất, có thể sống hàng trăm năm.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Thành phố nào là thủ đô của nước Anh?",
-          "A": "London",
-          "B": "Paris",
-          "C": "Berlin",
-          "D": "Madrid",
-          "dapan": "A",
-          "giaithich": "London là thủ đô của Vương quốc Liên hiệp Anh và Bắc Ireland, cũng là thành phố lớn nhất của Anh.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ngày kỉ niệm của mẹ ở Việt Nam là ngày nào?",
-          "A": "Ngày 20/10",
-          "B": "Ngày 8/3",
-          "C": "Ngày 1/6",
-          "D": "Ngày 14/2",
-          "dapan": "B",
-          "giaithich": "Ngày 8/3 hàng năm là Ngày Quốc tế Phụ nữ, được mọi người biết đến và tôn vinh như Ngày kỉ niệm của mẹ ở Việt Nam.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Đâu là món ăn nổi tiếng của Italy?",
-          "A": "Sushi",
-          "B": "Pizza",
-          "C": "Phở",
-          "D": "Bánh mì",
-          "dapan": "B",
-          "giaithich": "Pizza là món ăn nổi tiếng xuất phát từ Italy, được biết đến với nhiều loại nhân và hương vị đặc trưng.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Bài hát 'Em của ngày hôm qua' là của ca sĩ nào?",
-          "A": "Sơn Tùng M-TP",
-          "B": "Hương Tràm",
-          "C": "Đức Phúc",
-          "D": "Noo Phước Thịnh",
-          "dapan": "A",
-          "giaithich": "'Em của ngày hôm qua' là bài hát nổi tiếng của ca sĩ Sơn Tùng M-TP, được yêu thích trong cộng đồng âm nhạc Việt Nam.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là người đầu tiên bước chân lên đỉnh núi Everest?",
-          "A": "Edmund Hillary",
-          "B": "Tenzing Norgay",
-          "C": "Reinhold Messner",
-          "D": "David Sharp",
-          "dapan": "A",
-          "giaithich": "Edmund Hillary (cùng với Sherpa Tenzing Norgay) là người đầu tiên chính thức bước chân lên đỉnh núi Everest vào năm 1953.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Thành phố nào được biết đến với biệt danh 'Thành phố không bao giờ ngủ'?",
-          "A": "New York",
-          "B": "Tokyo",
-          "C": "Paris",
-          "D": "Las Vegas",
-          "dapan": "D",
-          "giaithich": "Las Vegas là thành phố nổi tiếng với các hoạt động giải trí 24/7, được gọi là 'Thành phố không bao giờ ngủ'.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Ai là người phát minh ra đèn điện?",
-          "A": "Benjamin Franklin",
-          "B": "Thomas Edison",
-          "C": "Nikola Tesla",
-          "D": "Alexander Graham Bell",
-          "dapan": "B",
-          "giaithich": "Thomas Edison là nhà phát minh người Mỹ nổi tiếng phát minh ra đèn điện chùm, có ảnh hưởng sâu rộng đến cuộc sống hiện đại.",
-          "loai": "dễ"
-        },
-        {
-          "cauhoi": "Bộ phim hoạt hình nổi tiếng 'Nàng tiên cá' được lấy cảm hứng từ truyện cổ tích nào?",
-          "A": "Cô bé lọ lem",
-          "B": "Thạch sanh",
-          "C": "Lọ lem",
-          "D": "Ấn độ ở ấn",
-          "dapan": "C",
-          "giaithich": "'Nàng tiên cá' là một bộ phim hoạt hình được lấy cảm hứng từ câu chuyện cổ tích về Cô bé Lọ Lem.",
-          "loai": "dễ"
-        }
-      ],
-    "binhthuong": [
-        {
-          "cauhoi": "Ai là người phát minh ra bóng đèn điện đầu tiên?",
-          "A": "Thomas Edison",
-          "B": "Albert Einstein",
-          "C": "Alexander Graham Bell",
-          "D": "Nikola Tesla",
-          "dapan": "A",
-          "giaithich": "Thomas Edison là nhà phát minh người Mỹ nổi tiếng, phát triển và thương mại hóa đèn bóng đèn điện đầu tiên.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ai là tác giả của cuốn tiểu thuyết 'Nhà giả kim'?",
-          "A": "Paulo Coelho",
-          "B": "Gabriel Garcia Marquez",
-          "C": "Haruki Murakami",
-          "D": "Leo Tolstoy",
-          "dapan": "A",
-          "giaithich": "'Nhà giả kim' là một trong những tác phẩm nổi tiếng nhất của Paulo Coelho, được xuất bản lần đầu năm 1988.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ai là người sáng lập ra Facebook?",
-          "A": "Bill Gates",
-          "B": "Mark Zuckerberg",
-          "C": "Steve Jobs",
-          "D": "Elon Musk",
-          "dapan": "B",
-          "giaithich": "Mark Zuckerberg là nhà sáng lập mạng xã hội Facebook, ra mắt chính thức vào năm 2004.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra máy tính cá nhân đầu tiên?",
-          "A": "Bill Gates",
-          "B": "Alan Turing",
-          "C": "Steve Jobs",
-          "D": "Charles Babbage",
-          "dapan": "D",
-          "giaithich": "Charles Babbage được xem là người có đóng góp lớn trong việc phát minh ra máy tính cá nhân đầu tiên vào thế kỷ 19.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Nước nào là quốc gia có diện tích lớn nhất trên thế giới?",
-          "A": "Nga",
-          "B": "Trung Quốc",
-          "C": "Hoa Kỳ",
-          "D": "Canada",
-          "dapan": "A",
-          "giaithich": "Nga là quốc gia có diện tích lớn nhất trên thế giới, chiếm gần 11% diện tích lãnh thổ của thế giới.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Tác phẩm 'Bản giao hưởng số 5' của Beethoven được gọi là 'Giao hưởng số mấy'?",
-          "A": "1",
-          "B": "3",
-          "C": "5",
-          "D": "9",
-          "dapan": "C",
-          "giaithich": "'Bản giao hưởng số 5' của Beethoven được gọi là 'Giao hưởng số 5', hay còn được biết đến với tên gọi 'Giao hưởng số 5 của Beethoven'.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ngành công nghiệp nào sử dụng chủ yếu nguồn năng lượng tái tạo?",
-          "A": "Dầu khí",
-          "B": "Than đá",
-          "C": "Năng lượng gió và mặt trời",
-          "D": "Hạt nhân",
-          "dapan": "C",
-          "giaithich": "Ngành công nghiệp năng lượng gió và mặt trời sử dụng chủ yếu nguồn năng lượng tái tạo từ gió và ánh sáng mặt trời.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Quốc gia nào được biết đến với biệt danh 'Đất nước của những nụ cười'?",
-          "A": "Nhật Bản",
-          "B": "Thái Lan",
-          "C": "Indonesia",
-          "D": "Ấn Độ",
-          "dapan": "B",
-          "giaithich": "Thái Lan được biết đến với biệt danh 'Đất nước của những nụ cười' do nền văn hóa thân thiện và niềm vui sống của người dân.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Bộ phim 'Titanic' được đạo diễn bởi ai?",
-          "A": "James Cameron",
-          "B": "Steven Spielberg",
-          "C": "Martin Scorsese",
-          "D": "Quentin Tarantino",
-          "dapan": "A",
-          "giaithich": "'Titanic' là bộ phim nổi tiếng do đạo diễn James Cameron thực hiện, phát hành vào năm 1997.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Bộ phim 'Harry Potter' được dựa trên tiểu thuyết của tác giả nào?",
-          "A": "J.K. Rowling",
-          "B": "J.R.R. Tolkien",
-          "C": "George R.R. Martin",
-          "D": "C.S. Lewis",
-          "dapan": "A",
-          "giaithich": "Bộ phim 'Harry Potter' được dựa trên loạt tiểu thuyết cùng tên của nhà văn nổi tiếng người Anh J.K. Rowling.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ai là người phát minh ra máy bay cánh diều?",
-          "A": "Wright Brothers",
-          "B": "Leonardo da Vinci",
-          "C": "Amelia Earhart",
-          "D": "Howard Hughes",
-          "dapan": "A",
-          "giaithich": "Anh em Wright (Wright Brothers) là những người đã chế tạo và thử nghiệm thành công máy bay cánh diều đầu tiên vào năm 1903.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Tượng nghĩa là biểu tượng của thành phố nào?",
-          "A": "London",
-          "B": "Paris",
-          "C": "New York City",
-          "D": "Rio de Janeiro",
-          "dapan": "D",
-          "giaithich": "Tượng Nghĩa (Christ the Redeemer) là biểu tượng nổi tiếng của thành phố Rio de Janeiro, Brazil.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Nhân vật hoạt hình nào nổi tiếng với câu nói 'What's up, Doc?'",
-          "A": "Mickey Mouse",
-          "B": "Bugs Bunny",
-          "C": "Donald Duck",
-          "D": "Tom",
-          "dapan": "B",
-          "giaithich": "Bugs Bunny là một trong những nhân vật hoạt hình nổi tiếng của Warner Bros, thường dùng câu nói 'What's up, Doc?' khiến nhiều người nhớ đến.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Hải cẩu là loài động vật thuộc lớp nào?",
-          "A": "Cá",
-          "B": "Lưỡng cư",
-          "C": "Thú",
-          "D": "Động vật có vú",
-          "dapan": "D",
-          "giaithich": "Hải cẩu là loài động vật có vú, sống trong môi trường nước và thường sống ở các vùng cực lạnh.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Tác giả nổi tiếng của tác phẩm 'Tôi thấy hoa vàng trên cỏ xanh' là ai?",
-          "A": "Nguyễn Nhật Ánh",
-          "B": "Nguyễn Du",
-          "C": "Tô Hoài",
-          "D": "Nam Cao",
-          "dapan": "A",
-          "giaithich": "'Tôi thấy hoa vàng trên cỏ xanh' là tác phẩm của nhà văn Nguyễn Nhật Ánh, nổi tiếng với những tác phẩm văn học dành cho tuổi mới lớn.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ngày nào được gọi là 'Ngày độc lập' của Hoa Kỳ?",
-          "A": "1 tháng 1",
-          "B": "4 tháng 7",
-          "C": "25 tháng 12",
-          "D": "15 tháng 8",
-          "dapan": "B",
-          "giaithich": "'Ngày độc lập' của Hoa Kỳ là ngày 4 tháng 7, kỷ niệm việc ký kết Tuyên ngôn Độc lập vào năm 1776.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Quốc gia nào nổi tiếng với tác phẩm kiến trúc độc đáo Sagrada Familia?",
-          "A": "Italia",
-          "B": "Pháp",
-          "C": "Tây Ban Nha",
-          "D": "Bồ Đào Nha",
-          "dapan": "C",
-          "giaithich": "Sagrada Familia là một nhà thờ kiến trúc nổi tiếng ở Barcelona, Tây Ban Nha, được thiết kế bởi kiến trúc sư Antoni Gaudí.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Loài chim nào có khả năng bay nhanh nhất trên thế giới?",
-          "A": "Chim én",
-          "B": "Chim cánh cụt",
-          "C": "Chim điệp",
-          "D": "Chim ruồi",
-          "dapan": "D",
-          "giaithich": "Chim ruồi (Peregrine falcon) là loài chim có khả năng bay nhanh nhất trên thế giới, với tốc độ bay lên đến 240 mph (386 km/h).",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ai là vận động viên vô địch Olympic đầu tiên trong lịch sử?",
-          "A": "Carl Lewis",
-          "B": "Michael Phelps",
-          "C": "Usain Bolt",
-          "D": "Spyridon Louis",
-          "dapan": "D",
-          "giaithich": "Spyridon Louis là vận động viên người Hy Lạp, vô địch Olympic đầu tiên trong lịch sử, giành huy chương vàng chạy marathon tại Olympic Athens năm 1896.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Thành phố nào được gọi là 'Thủ đô của thế giới'?",
-          "A": "New York City",
-          "B": "Paris",
-          "C": "London",
-          "D": "Tokyo",
-          "dapan": "A",
-          "giaithich": "New York City được gọi là 'Thủ đô của thế giới' do vai trò quan trọng trong tài chính, văn hóa và kinh tế quốc tế.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Quốc gia nào có hình dạng đất nước giống như chữ S?",
-          "A": "Ý",
-          "B": "Ấn Độ",
-          "C": "Bồ Đào Nha",
-          "D": "Chile",
-          "dapan": "D",
-          "giaithich": "Chile là quốc gia có hình dạng đất nước giống như chữ S, nằm dọc theo bờ biển Tây Nam của Nam Mỹ.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Câu nói 'May mắn ở chỗ bạn đang đứng, chính là nơi bạn có thể kiểm soát được mọi thứ' thuộc về ai?",
-          "A": "Mark Zuckerberg",
-          "B": "Jack Ma",
-          "C": "Bill Gates",
-          "D": "Warren Buffett",
-          "dapan": "B",
-          "giaithich": "Câu nói 'May mắn ở chỗ bạn đang đứng, chính là nơi bạn có thể kiểm soát được mọi thứ' thuộc về Jack Ma, người sáng lập Alibaba Group.",
-          "loai": "binhthuong"
-        },
-        {
-          "cauhoi": "Ai là người phát minh ra Internet?",
-          "A": "Tim Berners-Lee",
-          "B": "Bill Gates",
-          "C": "Steve Jobs",
-          "D": "Elon Musk",
-          "dapan": "A",
-          "giaithich": "Tim Berners-Lee là nhà khoa học máy tính người Anh, được coi là người phát minh ra World Wide Web (WWW), một phần quan trọng của Internet.",
-          "loai": "binhthuong"
-        }
-      ],
-      "kho": [
-        {
-          "cauhoi": "Thành phố nào được gọi là 'Thủ đô âm nhạc' của thế giới?",
-          "A": "Vienna",
-          "B": "Berlin",
-          "C": "London",
-          "D": "Paris",
-          "dapan": "A",
-          "giaithich": "Vienna, Áo, là nơi sinh sống của nhiều nhà soạn nhạc lừng danh và có nền văn hóa âm nhạc phong phú.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Bức tượng nổi tiếng 'Venus de Milo' hiện được trưng bày ở đâu?",
-          "A": "Louvre, Paris",
-          "B": "British Museum, London",
-          "C": "Uffizi Gallery, Florence",
-          "D": "Vatican Museum, Vatican City",
-          "dapan": "A",
-          "giaithich": "'Venus de Milo' là một trong những tác phẩm nghệ thuật cổ điển nổi tiếng nhất và hiện đang được trưng bày tại Bảo tàng Louvre ở Paris.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Quốc gia nào có diện tích lãnh thổ lớn nhất trên thế giới?",
-          "A": "Nga",
-          "B": "Canada",
-          "C": "Trung Quốc",
-          "D": "Brazil",
-          "dapan": "A",
-          "giaithich": "Nga là quốc gia có diện tích lãnh thổ lớn nhất trên thế giới, chiếm gần 1/8 diện tích của trái đất.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là người sáng lập ra học thuyết Darwinisme?",
-          "A": "Charles Darwin",
-          "B": "Alfred Russel Wallace",
-          "C": "Gregor Mendel",
-          "D": "Jean-Baptiste Lamarck",
-          "dapan": "A",
-          "giaithich": "Charles Darwin là nhà khoa học người Anh sáng lập ra học thuyết Darwinisme về tiến hóa sinh học.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Thành phố nào được coi là 'Thủ đô của thế giới cổ đại'?",
-          "A": "Rome",
-          "B": "Athens",
-          "C": "Cairo",
-          "D": "Baghdad",
-          "dapan": "A",
-          "giaithich": "Rome, Italy, được coi là 'Thủ đô của thế giới cổ đại' với vai trò lịch sử, văn hóa và chính trị lớn.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là người đã viết cuốn tiểu thuyết 'Chiến tranh và hòa bình'?",
-          "A": "Leo Tolstoy",
-          "B": "Fyodor Dostoevsky",
-          "C": "Anton Chekhov",
-          "D": "Alexander Pushkin",
-          "dapan": "A",
-          "giaithich": "'Chiến tranh và hòa bình' là tác phẩm của nhà văn người Nga Leo Tolstoy, xuất bản lần đầu năm 1869.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Nước nào là quốc gia đầu tiên phát triển ngành công nghiệp?",
-          "A": "Anh",
-          "B": "Mỹ",
-          "C": "Đức",
-          "D": "Pháp",
-          "dapan": "A",
-          "giaithich": "Anh là quốc gia đầu tiên phát triển ngành công nghiệp, từ đó làm nền tảng cho Cách mạng Công nghiệp.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Loài vật nào có trí thông minh cao nhất trong họ động vật?",
-          "A": "Người",
-          "B": "Chimpanzee",
-          "C": "Gấu trúc",
-          "D": "Cá heo thông minh",
-          "dapan": "A",
-          "giaithich": "Người được xem là loài vật có trí thông minh cao nhất trên hành tinh.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là nhà toán học nổi tiếng với định lý còn gọi là 'Bất đẳng thức Fourier'?",
-          "A": "Leonhard Euler",
-          "B": "Joseph Fourier",
-          "C": "Pierre-Simon Laplace",
-          "D": "Évariste Galois",
-          "dapan": "B",
-          "giaithich": "Joseph Fourier là nhà toán học người Pháp nổi tiếng với định lý và phép biến đổi có tên là Fourier.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là vua đầu tiên của nước Anh?",
-          "A": "William the Conqueror",
-          "B": "Henry VIII",
-          "C": "Richard the Lionheart",
-          "D": "Edward the Confessor",
-          "dapan": "A",
-          "giaithich": "William the Conqueror, hoàng đế Normandy, là vị vua đầu tiên của Anh từ năm 1066.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Khí hậu của sa mạc Sahara được gọi là gì?",
-          "A": "Khô",
-          "B": "Nóng",
-          "C": "Nhạt",
-          "D": "Diệu kỳ",
-          "dapan": "C",
-          "giaithich": "Khí hậu của sa mạc Sahara được gọi là 'khô' với đặc tính nhiệt độ cao và lượng mưa ít.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Câu nói 'Chúng ta không còn nhìn thấy nhau nữa' được dùng trong bài hát của nhóm nhạc nào?",
-          "A": "The Beatles",
-          "B": "Queen",
-          "C": "ABBA",
-          "D": "Pink Floyd",
-          "dapan": "B",
-          "giaithich": "Câu nói 'We're just two lost souls swimming in a fishbowl, year after year' được dùng trong bài hát 'Wish You Were Here' của Pink Floyd.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Thành phố nào là thủ đô của Canada?",
-          "A": "Toronto",
-          "B": "Vancouver",
-          "C": "Ottawa",
-          "D": "Montreal",
-          "dapan": "C",
-          "giaithich": "Ottawa là thủ đô của Canada, nằm ở vùng Ottawa-Hull trên biên giới Ontario và Quebec.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Câu nói 'Chủ nghĩa xã hội là ngày mai' được đặt tên theo tác phẩm của ai?",
-          "A": "Karl Marx",
-          "B": "Friedrich Engels",
-          "C": "Vladimir Lenin",
-          "D": "Leon Trotsky",
-          "dapan": "C",
-          "giaithich": "Câu nói 'Chủ nghĩa xã hội là ngày mai' là tên của tác phẩm của Vladimir Lenin, nhà lãnh đạo cách mạng Nga.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Địa danh nào là nguồn gốc của tên của một hành tinh ngoài Hệ Mặt Trời?",
-          "A": "Rome",
-          "B": "Paris",
-          "C": "London",
-          "D": "Athens",
-          "dapan": "D",
-          "giaithich": "Athens là tên gọi của một hành tinh nhỏ trong Hệ Mặt Trời, được phát hiện năm 1983.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là tác giả của cuốn tiểu thuyết 'Mùa hè ở Venice'?",
-          "A": "Thomas Mann",
-          "B": "Franz Kafka",
-          "C": "Marcel Proust",
-          "D": "James Joyce",
-          "dapan": "A",
-          "giaithich": "'Mùa hè ở Venice' là một tác phẩm của Thomas Mann, xuất bản lần đầu vào năm 1912.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là tác giả của tác phẩm 'Tôi đã từng yêu em'?",
-          "A": "Margaret Mitchell",
-          "B": "Daphne du Maurier",
-          "C": "Sylvia Plath",
-          "D": "Han Suyin",
-          "dapan": "C",
-          "giaithich": "'Tôi đã từng yêu em' là tác phẩm của Sylvia Plath, nữ nhà thơ, tiểu thuyết gia người Mỹ.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là nhà phát minh của máy tính đầu tiên trên thế giới?",
-          "A": "Alan Turing",
-          "B": "Charles Babbage",
-          "C": "Ada Lovelace",
-          "D": "John von Neumann",
-          "dapan": "B",
-          "giaithich": "Charles Babbage, nhà toán học và kỹ sư người Anh, được coi là 'cha đẻ' của máy tính.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Tên gọi 'bán kính ion' được liên kết với lĩnh vực nào trong khoa học?",
-          "A": "Sinh vật học",
-          "B": "Vật lý hạt nhân",
-          "C": "Hóa học",
-          "D": "Địa lý",
-          "dapan": "C",
-          "giaithich": "'Bán kính ion' là một thuật ngữ được sử dụng trong lĩnh vực hóa học để mô tả kích thước của các ion trong phân tử.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Tác phẩm 'Trò chơi vương quyền' là của tác giả nào?",
-          "A": "George R. R. Martin",
-          "B": "J. R. R. Tolkien",
-          "C": "Terry Pratchett",
-          "D": "Brandon Sanderson",
-          "dapan": "A",
-          "giaithich": "'Trò chơi vương quyền' là một trong những tác phẩm nổi tiếng của George R. R. Martin.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Ai là người phát minh ra đầu đọc vân tay?",
-          "A": "Arthur Korn",
-          "B": "Alphonse Bertillon",
-          "C": "Francis Galton",
-          "D": "John D. Rockefeller",
-          "dapan": "C",
-          "giaithich": "Francis Galton, nhà thống kê và nhà nghiên cứu người Anh, được ghi nhận là người phát minh ra đầu đọc vân tay.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Nơi nào được cho là có dân số cao nhất trên thế giới vào thời điểm hiện tại?",
-          "A": "Ấn Độ",
-          "B": "Trung Quốc",
-          "C": "Mỹ",
-          "D": "Indonesia",
-          "dapan": "A",
-          "giaithich": "Ấn Độ được cho là có dân số cao nhất trên thế giới vào thời điểm hiện tại, vượt qua Trung Quốc.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Khái niệm 'Số vàng' trong toán học liên quan đến gì?",
-          "A": "Dãy Fibonacci",
-          "B": "Số pi",
-          "C": "Logarit",
-          "D": "Số e",
-          "dapan": "A",
-          "giaithich": "'Số vàng' (Golden Ratio) là một tỷ lệ số học đặc biệt xuất hiện trong dãy Fibonacci và nhiều phương diện khác của toán học và nghệ thuật.",
-          "loai": "kho"
-        },
-        {
-          "cauhoi": "Đại dương nào được coi là 'lòng bàn tay xanh của Trái Đất'?",
-          "A": "Thái Bình Dương",
-          "B": "Đại Tây Dương",
-          "C": "Ấn Độ Dương",
-          "D": "Nam Băng Dương",
-          "dapan": "A",
-          "giaithich": "Thái Bình Dương được gọi là 'lòng bàn tay xanh của Trái Đất' do diện tích rộng lớn và vai trò quan trọng trong hệ sinh thái của hành tinh.",
-          "loai": "kho"
-        }
-      ],
-      "sieukho": [
-        {
-          "cauhoi": "Thành phố nào là thủ đô của Kazakhstan?",
-          "A": "Almaty",
-          "B": "Astana",
-          "C": "Bishkek",
-          "D": "Tashkent",
-          "dapan": "B",
-          "giaithich": "Astana là thủ đô của Kazakhstan từ năm 1997 đến 2019, sau đó được đổi tên thành Nur-Sultan.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Núi cao nhất ở châu Phi là gì?",
-          "A": "Kilimanjaro",
-          "B": "Elbrus",
-          "C": "Everest",
-          "D": "K2",
-          "dapan": "A",
-          "giaithich": "Núi Kilimanjaro là ngọn núi cao nhất ở châu Phi, nằm ở Tanzania.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người phát minh ra hình thức việc phân tích tâm lý học, được gọi là phân tích Jungian?",
-          "A": "Sigmund Freud",
-          "B": "Carl Jung",
-          "C": "Alfred Adler",
-          "D": "Erik Erikson",
-          "dapan": "B",
-          "giaithich": "Carl Jung là nhà tâm lý học người Thụy Sĩ, phát minh ra phân tích tâm lý học Jungian.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà thơ Hy Lạp cổ đại được coi là cha đẻ của thơ ca lãng mạn?",
-          "A": "Homer",
-          "B": "Aristotle",
-          "C": "Sappho",
-          "D": "Pindar",
-          "dapan": "C",
-          "giaithich": "Sappho là nhà thơ nổi tiếng của Hy Lạp cổ đại, được biết đến với thơ ca lãng mạn và thể loại thơ lyric.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà văn đã viết tiểu thuyết 'Mắt biếc'?",
-          "A": "Nguyễn Nhật Ánh",
-          "B": "Nguyễn Huy Thiệp",
-          "C": "Nguyễn Thị Thu Hương",
-          "D": "Nguyễn Tuân",
-          "dapan": "A",
-          "giaithich": "'Mắt biếc' là tiểu thuyết của nhà văn Nguyễn Nhật Ánh, xuất bản lần đầu vào năm 1990.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra loại thuốc kháng sinh đầu tiên trên thế giới?",
-          "A": "Alexander Fleming",
-          "B": "Louis Pasteur",
-          "C": "Robert Koch",
-          "D": "Paul Ehrlich",
-          "dapan": "A",
-          "giaithich": "Alexander Fleming là nhà khoa học người Anh, phát minh ra thuốc kháng sinh Penicillin vào năm 1928.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Tác giả nào đã viết tiểu thuyết 'Moby Dick'?",
-          "A": "Herman Melville",
-          "B": "Mark Twain",
-          "C": "Leo Tolstoy",
-          "D": "Charles Dickens",
-          "dapan": "A",
-          "giaithich": "'Moby Dick' là tiểu thuyết của Herman Melville, được xuất bản lần đầu vào năm 1851.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà sáng lập của hệ thống triết học Đạo thiên chúa giáo?",
-          "A": "Thomas Aquinas",
-          "B": "Saint Augustine",
-          "C": "Martin Luther",
-          "D": "John Calvin",
-          "dapan": "A",
-          "giaithich": "Thomas Aquinas là nhà triết học và thần học người Ý, là người sáng lập hệ thống triết học Đạo Thiên Chúa Giáo vào thế kỷ 13.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà văn đã viết tiểu thuyết 'Đồi gió hú'?",
-          "A": "Harper Lee",
-          "B": "John Steinbeck",
-          "C": "William Faulkner",
-          "D": "Margaret Mitchell",
-          "dapan": "C",
-          "giaithich": "'Đồi gió hú' là tiểu thuyết của William Faulkner, được xuất bản lần đầu vào năm 1939.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra loại thuốc vaccine đầu tiên?",
-          "A": "Edward Jenner",
-          "B": "Louis Pasteur",
-          "C": "Robert Koch",
-          "D": "Joseph Lister",
-          "dapan": "A",
-          "giaithich": "Edward Jenner là bác sĩ người Anh, phát minh ra loại vaccine đầu tiên để phòng ngừa bệnh sởi vào năm 1796.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Thành phố nào được biết đến với tên gọi là 'Venice of the North'?",
-          "A": "Amsterdam",
-          "B": "St. Petersburg",
-          "C": "Copenhagen",
-          "D": "Stockholm",
-          "dapan": "B",
-          "giaithich": "St. Petersburg là thành phố của Nga, nằm ở phía tây bắc của đất nước và được biết đến với tên gọi 'Venice of the North'.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra loại thuốc kháng sinh Streptomycin?",
-          "A": "Alexander Fleming",
-          "B": "Selman Waksman",
-          "C": "Paul Ehrlich",
-          "D": "Gerhard Domagk",
-          "dapan": "B",
-          "giaithich": "Selman Waksman là nhà vi sinh vật học người Mỹ, phát minh ra thuốc kháng sinh Streptomycin vào năm 1943.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra thiết bị đo nhiệt độ đầu tiên?",
-          "A": "Galileo Galilei",
-          "B": "Isaac Newton",
-          "C": "Anders Celsius",
-          "D": "Daniel Fahrenheit",
-          "dapan": "D",
-          "giaithich": "Daniel Fahrenheit là nhà vật lý người Đức, phát minh ra thang đo nhiệt độ Fahrenheit vào năm 1724.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà toán học đã đưa ra Bốn màu Định lý?",
-          "A": "Pierre-Simon Laplace",
-          "B": "Carl Friedrich Gauss",
-          "C": "Leonhard Euler",
-          "D": "Kenneth Appel và Wolfgang Haken",
-          "dapan": "D",
-          "giaithich": "Bốn màu Định lý là một trong những bài toán nổi tiếng nhất trong lý thuyết đồ thị, được giải quyết bởi Kenneth Appel và Wolfgang Haken vào năm 1976.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra loại thuốc kháng sinh Ampicillin?",
-          "A": "Alexander Fleming",
-          "B": "Ernst Boris Chain",
-          "C": "Edward Abraham",
-          "D": "Selman Waksman",
-          "dapan": "B",
-          "giaithich": "Ernst Boris Chain là nhà hóa học và sinh vật học người Đức-Anh, phát minh ra thuốc kháng sinh Ampicillin vào năm 1961.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra loại thuốc kháng sinh Penicillin?",
-          "A": "Alexander Fleming",
-          "B": "Ernst Boris Chain",
-          "C": "Edward Abraham",
-          "D": "Selman Waksman",
-          "dapan": "A",
-          "giaithich": "Alexander Fleming là nhà khoa học người Anh, phát minh ra thuốc kháng sinh Penicillin vào năm 1928.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra đèn đường (đèn đường hơi nước) đầu tiên?",
-          "A": "Thomas Edison",
-          "B": "Joseph Swan",
-          "C": "Humphry Davy",
-          "D": "George Westinghouse",
-          "dapan": "B",
-          "giaithich": "Joseph Swan là nhà khoa học người Anh, phát minh ra đèn đường hơi nước (đèn đường) vào năm 1878.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Bức tượng La Mã cổ đại 'Laocoon và con trăn' hiện được trưng bày ở đâu?",
-          "A": "Bảo tàng Louvre, Paris",
-          "B": "Bảo tàng Vatican, Vatican City",
-          "C": "Bảo tàng British, London",
-          "D": "Bảo tàng Metropolitan, New York",
-          "dapan": "B",
-          "giaithich": "Bức tượng 'Laocoon và con trăn' là một tác phẩm nghệ thuật cổ đại nổi tiếng của La Mã, hiện được trưng bày tại Bảo tàng Vatican.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra đèn soi điện đầu tiên?",
-          "A": "Joseph Swan",
-          "B": "Thomas Edison",
-          "C": "Humphry Davy",
-          "D": "Nikola Tesla",
-          "dapan": "B",
-          "giaithich": "Thomas Edison là nhà phát minh người Mỹ, phát minh ra đèn soi điện đầu tiên vào năm 1879.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà toán học đã đưa ra Mệnh đề Fermat?",
-          "A": "Pierre-Simon Laplace",
-          "B": "Pierre de Fermat",
-          "C": "Carl Friedrich Gauss",
-          "D": "Leonhard Euler",
-          "dapan": "B",
-          "giaithich": "Mệnh đề Fermat là một bài toán nổi tiếng trong lý thuyết số, được phát biểu bởi nhà toán học người Pháp Pierre de Fermat.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là nhà vật lý đã đưa ra Lý thuyết Tương đối Tổng quát?",
-          "A": "Albert Einstein",
-          "B": "Niels Bohr",
-          "C": "Max Planck",
-          "D": "Werner Heisenberg",
-          "dapan": "A",
-          "giaithich": "Albert Einstein là nhà vật lý người Đức-Swiss, đưa ra Lý thuyết Tương đối Tổng quát vào năm 1915.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ngôn ngữ lập trình nào được sử dụng để phát triển hệ điều hành Unix?",
-          "A": "C",
-          "B": "C++",
-          "C": "Python",
-          "D": "Java",
-          "dapan": "A",
-          "giaithich": "Ngôn ngữ lập trình C được sử dụng để phát triển hệ điều hành Unix từ những năm 1970.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra mạng xã hội Facebook?",
-          "A": "Mark Zuckerberg",
-          "B": "Jack Dorsey",
-          "C": "Evan Spiegel",
-          "D": "Kevin Systrom",
-          "dapan": "A",
-          "giaithich": "Mark Zuckerberg là nhà sáng lập Facebook, mạng xã hội lớn nhất thế giới hiện nay.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra mạng xã hội Twitter?",
-          "A": "Mark Zuckerberg",
-          "B": "Jack Dorsey",
-          "C": "Evan Spiegel",
-          "D": "Kevin Systrom",
-          "dapan": "B",
-          "giaithich": "Jack Dorsey là người sáng lập Twitter, mạng xã hội cho phép người dùng gửi và đọc các tin nhắn ngắn.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra mạng xã hội Snapchat?",
-          "A": "Mark Zuckerberg",
-          "B": "Jack Dorsey",
-          "C": "Evan Spiegel",
-          "D": "Kevin Systrom",
-          "dapan": "C",
-          "giaithich": "Evan Spiegel là người sáng lập Snapchat, mạng xã hội cho phép người dùng chia sẻ hình ảnh và video ngắn có thời hạn.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là người đã phát minh ra mạng xã hội Instagram?",
-          "A": "Mark Zuckerberg",
-          "B": "Jack Dorsey",
-          "C": "Evan Spiegel",
-          "D": "Kevin Systrom",
-          "dapan": "D",
-          "giaithich": "Kevin Systrom là người sáng lập Instagram, mạng xã hội chia sẻ hình ảnh và video, được mua lại bởi Facebook vào năm 2012.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Trong lý thuyết số, định lý Fermat cuối cùng đã được chứng minh vào năm nào?",
-          "A": "1994",
-          "B": "2000",
-          "C": "1983",
-          "D": "1978",
-          "dapan": "A",
-          "giaithich": "Định lý Fermat cuối cùng, được phát biểu bởi Pierre de Fermat, đã được chứng minh bởi Andrew Wiles vào năm 1994.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Ai là tác giả của cuốn sách 'A Brief History of Time'?",
-          "A": "Richard Feynman",
-          "B": "Albert Einstein",
-          "C": "Stephen Hawking",
-          "D": "Carl Sagan",
-          "dapan": "C",
-          "giaithich": "'A Brief History of Time' là cuốn sách nổi tiếng về vũ trụ học của Stephen Hawking, xuất bản lần đầu vào năm 1988.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Người đầu tiên giải thích được sự tồn tại của các hạt quark là ai?",
-          "A": "Murray Gell-Mann",
-          "B": "Richard Feynman",
-          "C": "Enrico Fermi",
-          "D": "Paul Dirac",
-          "dapan": "A",
-          "giaithich": "Murray Gell-Mann là nhà vật lý người Mỹ, người đầu tiên đề xuất sự tồn tại của các hạt quark vào năm 1964.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Bản hiến pháp đầu tiên của thế giới được lập tại quốc gia nào?",
-          "A": "Hoa Kỳ",
-          "B": "Iceland",
-          "C": "Ấn Độ",
-          "D": "Hy Lạp cổ đại",
-          "dapan": "B",
-          "giaithich": "Hiến pháp đầu tiên trên thế giới được lập tại Iceland vào năm 930, còn được gọi là Althing, hội đồng quốc gia đầu tiên.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Tập hợp các số siêu việt đầu tiên được chứng minh là tồn tại bởi nhà toán học nào?",
-          "A": "Joseph Liouville",
-          "B": "Carl Gauss",
-          "C": "Leonhard Euler",
-          "D": "David Hilbert",
-          "dapan": "A",
-          "giaithich": "Joseph Liouville là nhà toán học người Pháp, người đầu tiên chứng minh sự tồn tại của các số siêu việt vào năm 1844.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Người sáng lập ra trường phái triết học Stoicism là ai?",
-          "A": "Plato",
-          "B": "Aristotle",
-          "C": "Zeno of Citium",
-          "D": "Epicurus",
-          "dapan": "C",
-          "giaithich": "Zeno of Citium là triết gia Hy Lạp cổ đại, người sáng lập ra trường phái Stoicism vào khoảng thế kỷ 3 trước Công nguyên.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Cuốn sách 'Principia Mathematica' của Isaac Newton được xuất bản lần đầu vào năm nào?",
-          "A": "1687",
-          "B": "1726",
-          "C": "1665",
-          "D": "1704",
-          "dapan": "A",
-          "giaithich": "'Philosophiæ Naturalis Principia Mathematica', thường được gọi là Principia, là cuốn sách của Isaac Newton, xuất bản lần đầu vào năm 1687.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Người phát hiện ra nguyên lý bất định trong cơ học lượng tử là ai?",
-          "A": "Niels Bohr",
-          "B": "Erwin Schrödinger",
-          "C": "Werner Heisenberg",
-          "D": "Max Planck",
-          "dapan": "C",
-          "giaithich": "Werner Heisenberg là nhà vật lý người Đức, người đã phát hiện ra nguyên lý bất định vào năm 1927.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Người phát minh ra giải pháp cho bài toán Định lý Tứ diện trong toán học là ai?",
-          "A": "Leonhard Euler",
-          "B": "David Hilbert",
-          "C": "Euclid",
-          "D": "Carl Gauss",
-          "dapan": "A",
-          "giaithich": "Leonhard Euler là nhà toán học người Thụy Sĩ, người đầu tiên đưa ra giải pháp cho bài toán Định lý Tứ diện vào thế kỷ 18.",
-          "loai": "sieukho"
-        },
-        {
-          "cauhoi": "Tác giả của tác phẩm 'Critique of Pure Reason' là ai?",
-          "A": "Friedrich Nietzsche",
-          "B": "Immanuel Kant",
-          "C": "Georg Wilhelm Friedrich Hegel",
-          "D": "Arthur Schopenhauer",
-          "dapan": "B",
-          "giaithich": "'Critique of Pure Reason' là tác phẩm triết học của Immanuel Kant, xuất bản lần đầu vào năm 1781.",
-          "loai": "sieukho"
-        }
-      ]
+  "easy": [
+    {
+      "question": "Who is the main character in the cartoon 'Tom and Jerry'?",
+      "A": "Tom",
+      "B": "Jerry",
+      "C": "Spike",
+      "D": "Butch",
+      "answer": "B",
+      "explanation": "'Jerry' is the mouse who is friends with 'Tom' the cat in the famous cartoon series 'Tom and Jerry'.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which animal can fly?",
+      "A": "Giraffe",
+      "B": "Swallow",
+      "C": "Whale",
+      "D": "Sea turtle",
+      "answer": "B",
+      "explanation": "The swallow is a bird that can fly high and fly far on winter migration journeys.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which famous doctor invented the vaccine for rabies?",
+      "A": "Alexander Fleming",
+      "B": "Albert Einstein",
+      "C": "Louis Pasteur",
+      "D": "Isaac Newton",
+      "answer": "C",
+      "explanation": "Louis Pasteur was a French scientist, famous for his research and development of the vaccine for rabies.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which country is known for the 'Pyramids of Giza'?",
+      "A": "India",
+      "B": "Egypt",
+      "C": "Mexico",
+      "D": "China",
+      "answer": "B",
+      "explanation": "The Pyramids of Giza are one of the Seven Wonders of the Ancient World, located in Egypt.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who founded Microsoft?",
+      "A": "Bill Gates",
+      "B": "Steve Jobs",
+      "C": "Jeff Bezos",
+      "D": "Mark Zuckerberg",
+      "answer": "A",
+      "explanation": "Bill Gates founded Microsoft, one of the largest and most famous technology companies in the world.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who was the first person to set foot on the moon?",
+      "A": "Neil Armstrong",
+      "B": "Buzz Aldrin",
+      "C": "Yuri Gagarin",
+      "D": "Alan Shepard",
+      "answer": "A",
+      "explanation": "Neil Armstrong was the first American astronaut to set foot on the moon, on 20 July 1969.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which king is known by the nickname 'King Son Goku'?",
+      "A": "King Arthur",
+      "B": "King Midas",
+      "C": "King Solomon",
+      "D": "King Trung Vuong",
+      "answer": "B",
+      "explanation": "'King Midas' is the nickname of the king in Greek mythology, said to be able to turn everything into gold.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which tree is known as the 'Rose of the East'?",
+      "A": "Rose",
+      "B": "Plumeria",
+      "C": "Cherry",
+      "D": "Apricot blossom",
+      "answer": "C",
+      "explanation": "The cherry is a tree that originates from the East, known for its beautiful flowers and sweet fruit.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "The work 'Winter Love Song' was composed by which famous composer?",
+      "A": "Ludwig van Beethoven",
+      "B": "Johann Sebastian Bach",
+      "C": "Wolfgang Amadeus Mozart",
+      "D": "Pyotr Ilyich Tchaikovsky",
+      "answer": "D",
+      "explanation": "'Winter Love Song' is one of Tchaikovsky's famous works, known for its legendary winter melody.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who founded Facebook?",
+      "A": "Bill Gates",
+      "B": "Steve Jobs",
+      "C": "Jeff Bezos",
+      "D": "Mark Zuckerberg",
+      "answer": "D",
+      "explanation": "Mark Zuckerberg is the founder and CEO of Facebook, the largest social network in the world.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which country is in Asia?",
+      "A": "Brazil",
+      "B": "Egypt",
+      "C": "Vietnam",
+      "D": "Australia",
+      "answer": "C",
+      "explanation": "Vietnam is a country in Southeast Asia, not Asia.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which city is called the 'Capital of Smiles'?",
+      "A": "Sydney",
+      "B": "Moscow",
+      "C": "Bangkok",
+      "D": "Rio de Janeiro",
+      "answer": "C",
+      "explanation": "Bangkok, the capital of Thailand, is known as the 'Capital of Smiles' because of the friendly and cheerful nature of its people.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who is the author of 'The Alchemist'?",
+      "A": "Paulo Coelho",
+      "B": "Gabriel Garcia Marquez",
+      "C": "Haruki Murakami",
+      "D": "Leo Tolstoy",
+      "answer": "A",
+      "explanation": "'The Alchemist' is one of Paulo Coelho's most famous works, first published in 1988.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which animal is the best at climbing trees?",
+      "A": "Bird",
+      "B": "Squirrel",
+      "C": "Giraffe",
+      "D": "Spider",
+      "answer": "B",
+      "explanation": "The squirrel is an animal that can climb trees with its sharp, flexible claws.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who invented the wheelchair?",
+      "A": "Thomas Edison",
+      "B": "Galileo Galilei",
+      "C": "Isaac Newton",
+      "D": "Benjamin Franklin",
+      "answer": "A",
+      "explanation": "Thomas Edison, a famous American inventor and businessman, invented the wheelchair to help disabled people move around.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which animal lives the longest?",
+      "A": "Mouse",
+      "B": "Saola",
+      "C": "Elephant",
+      "D": "Turtle",
+      "answer": "D",
+      "explanation": "The turtle is one of the longest-living animals on Earth and can live for hundreds of years.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which city is the capital of England?",
+      "A": "London",
+      "B": "Paris",
+      "C": "Berlin",
+      "D": "Madrid",
+      "answer": "A",
+      "explanation": "London is the capital of the United Kingdom of Great Britain and Northern Ireland, and also the largest city in England.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What day is Mother's Day in Vietnam?",
+      "A": "October 20",
+      "B": "March 8",
+      "C": "June 1",
+      "D": "February 14",
+      "answer": "B",
+      "explanation": "March 8 every year is International Women's Day, widely known and honored as Mother's Day in Vietnam.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which is a famous dish from Italy?",
+      "A": "Sushi",
+      "B": "Pizza",
+      "C": "Pho",
+      "D": "Banh mi",
+      "answer": "B",
+      "explanation": "Pizza is a famous dish from Italy, known for its many toppings and distinctive flavors.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "The song 'Em của ngày hôm qua' is by which singer?",
+      "A": "Sơn Tùng M-TP",
+      "B": "Hương Tràm",
+      "C": "Đức Phúc",
+      "D": "Noo Phước Thịnh",
+      "answer": "A",
+      "explanation": "'Em của ngày hôm qua' is a famous song by singer Sơn Tùng M-TP, loved in the Vietnamese music community.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who was the first person to reach the summit of Mount Everest?",
+      "A": "Edmund Hillary",
+      "B": "Tenzing Norgay",
+      "C": "Reinhold Messner",
+      "D": "David Sharp",
+      "answer": "A",
+      "explanation": "Edmund Hillary (together with Sherpa Tenzing Norgay) was the first person to officially set foot on the summit of Mount Everest in 1953.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which city is known as the 'City That Never Sleeps'?",
+      "A": "New York",
+      "B": "Tokyo",
+      "C": "Paris",
+      "D": "Las Vegas",
+      "answer": "A",
+      "explanation": "New York is known as the 'City That Never Sleeps' for its round-the-clock activity.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Who invented the electric light?",
+      "A": "Benjamin Franklin",
+      "B": "Thomas Edison",
+      "C": "Nikola Tesla",
+      "D": "Alexander Graham Bell",
+      "answer": "B",
+      "explanation": "Thomas Edison was a famous American inventor who invented the electric light bulb, which had a deep impact on modern life.",
+      "difficulty": "easy"
+    },
+    {
+      "question": "The famous cartoon 'The Little Mermaid' was inspired by which fairy tale?",
+      "A": "Cinderella",
+      "B": "Thach Sanh",
+      "C": "Cinderella",
+      "D": "India in India",
+      "answer": "C",
+      "explanation": "'The Little Mermaid' is a cartoon inspired by the fairy tale of Cinderella.",
+      "difficulty": "easy"
+    }
+  ],
+  "normal": [
+    {
+      "question": "Who invented the first electric light bulb?",
+      "A": "Thomas Edison",
+      "B": "Albert Einstein",
+      "C": "Alexander Graham Bell",
+      "D": "Nikola Tesla",
+      "answer": "A",
+      "explanation": "Thomas Edison was a famous American inventor who developed and commercialized the first electric light bulb.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who is the author of the novel 'The Alchemist'?",
+      "A": "Paulo Coelho",
+      "B": "Gabriel Garcia Marquez",
+      "C": "Haruki Murakami",
+      "D": "Leo Tolstoy",
+      "answer": "A",
+      "explanation": "'The Alchemist' is one of Paulo Coelho's most famous works, first published in 1988.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who founded Facebook?",
+      "A": "Bill Gates",
+      "B": "Mark Zuckerberg",
+      "C": "Steve Jobs",
+      "D": "Elon Musk",
+      "answer": "B",
+      "explanation": "Mark Zuckerberg founded the social network Facebook, officially launched in 2004.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who invented the first personal computer?",
+      "A": "Bill Gates",
+      "B": "Alan Turing",
+      "C": "Steve Jobs",
+      "D": "Charles Babbage",
+      "answer": "D",
+      "explanation": "Charles Babbage is considered to have made a major contribution to inventing the first personal computer in the 19th century.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which country has the largest area in the world?",
+      "A": "Russia",
+      "B": "China",
+      "C": "United States",
+      "D": "Canada",
+      "answer": "A",
+      "explanation": "Russia is the country with the largest area in the world, covering nearly 11% of the world's land area.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Beethoven's 'Symphony No. 5' is called 'Symphony No. what'?",
+      "A": "1",
+      "B": "3",
+      "C": "5",
+      "D": "9",
+      "answer": "C",
+      "explanation": "Beethoven's 'Symphony No. 5' is called 'Symphony No. 5', also known as 'Beethoven's Symphony No. 5'.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which industry mainly uses renewable energy?",
+      "A": "Oil and gas",
+      "B": "Coal",
+      "C": "Wind and solar energy",
+      "D": "Nuclear",
+      "answer": "C",
+      "explanation": "The wind and solar energy industry mainly uses renewable energy from wind and sunlight.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which country is known as the 'Land of Smiles'?",
+      "A": "Japan",
+      "B": "Thailand",
+      "C": "Indonesia",
+      "D": "India",
+      "answer": "B",
+      "explanation": "Thailand is known as the 'Land of Smiles' because of its friendly culture and the joyful way of life of its people.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who directed the movie 'Titanic'?",
+      "A": "James Cameron",
+      "B": "Steven Spielberg",
+      "C": "Martin Scorsese",
+      "D": "Quentin Tarantino",
+      "answer": "A",
+      "explanation": "'Titanic' is a famous movie directed by James Cameron, released in 1997.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "The 'Harry Potter' movies are based on novels by which author?",
+      "A": "J.K. Rowling",
+      "B": "J.R.R. Tolkien",
+      "C": "George R.R. Martin",
+      "D": "C.S. Lewis",
+      "answer": "A",
+      "explanation": "The 'Harry Potter' movies are based on the novel series of the same name by famous English writer J.K. Rowling.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who invented the first airplane?",
+      "A": "Wright Brothers",
+      "B": "Leonardo da Vinci",
+      "C": "Amelia Earhart",
+      "D": "Howard Hughes",
+      "answer": "A",
+      "explanation": "The Wright Brothers built and successfully tested the first airplane in 1903.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "The Christ the Redeemer statue is the symbol of which city?",
+      "A": "London",
+      "B": "Paris",
+      "C": "New York City",
+      "D": "Rio de Janeiro",
+      "answer": "D",
+      "explanation": "Christ the Redeemer is a famous symbol of the city of Rio de Janeiro, Brazil.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which cartoon character is famous for the line 'What's up, Doc?'",
+      "A": "Mickey Mouse",
+      "B": "Bugs Bunny",
+      "C": "Donald Duck",
+      "D": "Tom",
+      "answer": "B",
+      "explanation": "Bugs Bunny is one of Warner Bros' famous cartoon characters, known for the line 'What's up, Doc?' that many people remember.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Seals belong to which class of animals?",
+      "A": "Fish",
+      "B": "Amphibians",
+      "C": "Beasts",
+      "D": "Mammals",
+      "answer": "D",
+      "explanation": "The seal is a mammal that lives in water and usually lives in very cold polar regions.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who is the famous author of 'Tôi thấy hoa vàng trên cỏ xanh'?",
+      "A": "Nguyễn Nhật Ánh",
+      "B": "Nguyễn Du",
+      "C": "Tô Hoài",
+      "D": "Nam Cao",
+      "answer": "A",
+      "explanation": "'Tôi thấy hoa vàng trên cỏ xanh' is a work by writer Nguyễn Nhật Ánh, famous for literary works for teenagers.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which day is called the 'Independence Day' of the United States?",
+      "A": "January 1",
+      "B": "July 4",
+      "C": "December 25",
+      "D": "August 15",
+      "answer": "B",
+      "explanation": "The United States' 'Independence Day' is July 4, marking the signing of the Declaration of Independence in 1776.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which country is famous for the unique architectural work Sagrada Familia?",
+      "A": "Italy",
+      "B": "France",
+      "C": "Spain",
+      "D": "Portugal",
+      "answer": "C",
+      "explanation": "The Sagrada Familia is a famous church in Barcelona, Spain, designed by architect Antoni Gaudí.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which bird can fly the fastest in the world?",
+      "A": "Swallow",
+      "B": "Penguin",
+      "C": "Butterfly",
+      "D": "Peregrine falcon",
+      "answer": "D",
+      "explanation": "The peregrine falcon is the fastest flying bird in the world, reaching up to 240 mph (386 km/h) in a dive.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who was the first Olympic champion in history?",
+      "A": "Carl Lewis",
+      "B": "Michael Phelps",
+      "C": "Usain Bolt",
+      "D": "Spyridon Louis",
+      "answer": "D",
+      "explanation": "Spyridon Louis was a Greek athlete, the first Olympic champion in history, winning the marathon gold medal at the Athens Olympics in 1896.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which city is called the 'Capital of the World'?",
+      "A": "New York City",
+      "B": "Paris",
+      "C": "London",
+      "D": "Tokyo",
+      "answer": "A",
+      "explanation": "New York City is called the 'Capital of the World' because of its important role in international finance, culture and economics.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Which country is shaped like the letter S?",
+      "A": "Italy",
+      "B": "India",
+      "C": "Portugal",
+      "D": "Chile",
+      "answer": "D",
+      "explanation": "Chile is a country shaped like the letter S, lying along the southwest coast of South America.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "The quote 'Luck is where you are standing, which is where you can control everything' belongs to whom?",
+      "A": "Mark Zuckerberg",
+      "B": "Jack Ma",
+      "C": "Bill Gates",
+      "D": "Warren Buffett",
+      "answer": "B",
+      "explanation": "The quote 'Luck is where you are standing, which is where you can control everything' belongs to Jack Ma, the founder of Alibaba Group.",
+      "difficulty": "normal"
+    },
+    {
+      "question": "Who invented the Internet?",
+      "A": "Tim Berners-Lee",
+      "B": "Bill Gates",
+      "C": "Steve Jobs",
+      "D": "Elon Musk",
+      "answer": "A",
+      "explanation": "Tim Berners-Lee is a British computer scientist, considered the inventor of the World Wide Web (WWW), an important part of the Internet.",
+      "difficulty": "normal"
+    }
+  ],
+  "hard": [
+    {
+      "question": "Which city is called the 'Music Capital' of the world?",
+      "A": "Vienna",
+      "B": "Berlin",
+      "C": "London",
+      "D": "Paris",
+      "answer": "A",
+      "explanation": "Vienna, Austria, is home to many famous composers and has a rich musical culture.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Where is the famous statue 'Venus de Milo' currently displayed?",
+      "A": "Louvre, Paris",
+      "B": "British Museum, London",
+      "C": "Uffizi Gallery, Florence",
+      "D": "Vatican Museum, Vatican City",
+      "answer": "A",
+      "explanation": "'Venus de Milo' is one of the most famous classical works of art and is currently displayed at the Louvre Museum in Paris.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which country has the largest land area in the world?",
+      "A": "Russia",
+      "B": "Canada",
+      "C": "China",
+      "D": "Brazil",
+      "answer": "A",
+      "explanation": "Russia is the country with the largest land area in the world, covering nearly 1/8 of the Earth's surface.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who founded the theory of Darwinism?",
+      "A": "Charles Darwin",
+      "B": "Alfred Russel Wallace",
+      "C": "Gregor Mendel",
+      "D": "Jean-Baptiste Lamarck",
+      "answer": "A",
+      "explanation": "Charles Darwin was an English scientist who founded the theory of Darwinism on biological evolution.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which city is considered the 'Capital of the Ancient World'?",
+      "A": "Rome",
+      "B": "Athens",
+      "C": "Cairo",
+      "D": "Baghdad",
+      "answer": "A",
+      "explanation": "Rome, Italy, is considered the 'Capital of the Ancient World' for its great historical, cultural and political role.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who wrote the novel 'War and Peace'?",
+      "A": "Leo Tolstoy",
+      "B": "Fyodor Dostoevsky",
+      "C": "Anton Chekhov",
+      "D": "Alexander Pushkin",
+      "answer": "A",
+      "explanation": "'War and Peace' is a work by Russian writer Leo Tolstoy, first published in 1869.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which country was the first to develop industry?",
+      "A": "England",
+      "B": "USA",
+      "C": "Germany",
+      "D": "France",
+      "answer": "A",
+      "explanation": "England was the first country to develop industry, laying the foundation for the Industrial Revolution.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which animal has the highest intelligence in the animal kingdom?",
+      "A": "Human",
+      "B": "Chimpanzee",
+      "C": "Panda",
+      "D": "Intelligent dolphin",
+      "answer": "A",
+      "explanation": "Humans are considered the most intelligent species on the planet.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which mathematician is famous for the theorem also called the 'Fourier Inequality'?",
+      "A": "Leonhard Euler",
+      "B": "Joseph Fourier",
+      "C": "Pierre-Simon Laplace",
+      "D": "Évariste Galois",
+      "answer": "B",
+      "explanation": "Joseph Fourier was a French mathematician famous for the theorem and transform named after him.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who was the first king of England?",
+      "A": "William the Conqueror",
+      "B": "Henry VIII",
+      "C": "Richard the Lionheart",
+      "D": "Edward the Confessor",
+      "answer": "A",
+      "explanation": "William the Conqueror, ruler of Normandy, was the first king of England from 1066.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the climate of the Sahara Desert called?",
+      "A": "Dry",
+      "B": "Hot",
+      "C": "Pale",
+      "D": "Magical",
+      "answer": "A",
+      "explanation": "The climate of the Sahara Desert is called 'dry', with high temperatures and little rainfall.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "The quote 'We don't see each other anymore' is used in a song by which band?",
+      "A": "The Beatles",
+      "B": "Queen",
+      "C": "ABBA",
+      "D": "Pink Floyd",
+      "answer": "D",
+      "explanation": "The quote 'We're just two lost souls swimming in a fishbowl, year after year' is used in the song 'Wish You Were Here' by Pink Floyd.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which city is the capital of Canada?",
+      "A": "Toronto",
+      "B": "Vancouver",
+      "C": "Ottawa",
+      "D": "Montreal",
+      "answer": "C",
+      "explanation": "Ottawa is the capital of Canada, located in the Ottawa-Hull region on the Ontario-Quebec border.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "The quote 'Socialism is tomorrow' is the title of a work by whom?",
+      "A": "Karl Marx",
+      "B": "Friedrich Engels",
+      "C": "Vladimir Lenin",
+      "D": "Leon Trotsky",
+      "answer": "C",
+      "explanation": "The quote 'Socialism is tomorrow' is the title of a work by Vladimir Lenin, leader of the Russian Revolution.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which place is the origin of the name of a planet outside the Solar System?",
+      "A": "Rome",
+      "B": "Paris",
+      "C": "London",
+      "D": "Athens",
+      "answer": "D",
+      "explanation": "Athens is the name of a small planet in the Solar System, discovered in 1983.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who wrote the novel 'Summer in Venice'?",
+      "A": "Thomas Mann",
+      "B": "Franz Kafka",
+      "C": "Marcel Proust",
+      "D": "James Joyce",
+      "answer": "A",
+      "explanation": "'Summer in Venice' is a work by Thomas Mann, first published in 1912.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who is the author of 'Tôi đã từng yêu em'?",
+      "A": "Margaret Mitchell",
+      "B": "Daphne du Maurier",
+      "C": "Sylvia Plath",
+      "D": "Han Suyin",
+      "answer": "C",
+      "explanation": "'Tôi đã từng yêu em' is a work by Sylvia Plath, an American poet and novelist.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who invented the first computer in the world?",
+      "A": "Alan Turing",
+      "B": "Charles Babbage",
+      "C": "Ada Lovelace",
+      "D": "John von Neumann",
+      "answer": "B",
+      "explanation": "Charles Babbage, an English mathematician and engineer, is considered the 'father of the computer'.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "The term 'ionic radius' is linked to which field of science?",
+      "A": "Biology",
+      "B": "Nuclear physics",
+      "C": "Chemistry",
+      "D": "Geography",
+      "answer": "C",
+      "explanation": "'Ionic radius' is a term used in chemistry to describe the size of ions in a molecule.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "'Game of Thrones' is by which author?",
+      "A": "George R. R. Martin",
+      "B": "J. R. R. Tolkien",
+      "C": "Terry Pratchett",
+      "D": "Brandon Sanderson",
+      "answer": "A",
+      "explanation": "'Game of Thrones' is one of George R. R. Martin's famous works.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Who invented the fingerprint reader?",
+      "A": "Arthur Korn",
+      "B": "Alphonse Bertillon",
+      "C": "Francis Galton",
+      "D": "John D. Rockefeller",
+      "answer": "C",
+      "explanation": "Francis Galton, an English statistician and researcher, is credited with inventing the fingerprint reader.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which place is said to have the highest population in the world right now?",
+      "A": "India",
+      "B": "China",
+      "C": "USA",
+      "D": "Indonesia",
+      "answer": "A",
+      "explanation": "India is said to have the highest population in the world right now, overtaking China.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What does the concept of the 'Golden Number' in mathematics relate to?",
+      "A": "Fibonacci sequence",
+      "B": "Pi",
+      "C": "Logarithm",
+      "D": "The number e",
+      "answer": "A",
+      "explanation": "The 'Golden Number' (Golden Ratio) is a special mathematical ratio that appears in the Fibonacci sequence and many other areas of mathematics and art.",
+      "difficulty": "hard"
+    },
+    {
+      "question": "Which ocean is considered the 'Green Palm of the Earth'?",
+      "A": "Pacific Ocean",
+      "B": "Atlantic Ocean",
+      "C": "Indian Ocean",
+      "D": "Southern Ocean",
+      "answer": "A",
+      "explanation": "The Pacific Ocean is called the 'Green Palm of the Earth' due to its vast area and important role in the planet's ecosystem.",
+      "difficulty": "hard"
+    }
+  ],
+  "superhard": [
+    {
+      "question": "Which city is the capital of Kazakhstan?",
+      "A": "Almaty",
+      "B": "Astana",
+      "C": "Bishkek",
+      "D": "Tashkent",
+      "answer": "B",
+      "explanation": "Astana was the capital of Kazakhstan from 1997 to 2019, after which it was renamed Nur-Sultan.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "What is the highest mountain in Africa?",
+      "A": "Kilimanjaro",
+      "B": "Elbrus",
+      "C": "Everest",
+      "D": "K2",
+      "answer": "A",
+      "explanation": "Mount Kilimanjaro is the highest mountain in Africa, located in Tanzania.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the form of psychological analysis called Jungian analysis?",
+      "A": "Sigmund Freud",
+      "B": "Carl Jung",
+      "C": "Alfred Adler",
+      "D": "Erik Erikson",
+      "answer": "B",
+      "explanation": "Carl Jung was a Swiss psychologist who invented Jungian psychological analysis.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which ancient Greek poet is considered the father of romantic poetry?",
+      "A": "Homer",
+      "B": "Aristotle",
+      "C": "Sappho",
+      "D": "Pindar",
+      "answer": "C",
+      "explanation": "Sappho was a famous poet of ancient Greece, known for romantic poetry and the lyric poetry genre.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which writer wrote the novel 'Mắt biếc'?",
+      "A": "Nguyễn Nhật Ánh",
+      "B": "Nguyễn Huy Thiệp",
+      "C": "Nguyễn Thị Thu Hương",
+      "D": "Nguyễn Tuân",
+      "answer": "A",
+      "explanation": "'Mắt biếc' is a novel by writer Nguyễn Nhật Ánh, first published in 1990.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the first antibiotic in the world?",
+      "A": "Alexander Fleming",
+      "B": "Louis Pasteur",
+      "C": "Robert Koch",
+      "D": "Paul Ehrlich",
+      "answer": "A",
+      "explanation": "Alexander Fleming was an English scientist who invented the antibiotic Penicillin in 1928.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which author wrote the novel 'Moby Dick'?",
+      "A": "Herman Melville",
+      "B": "Mark Twain",
+      "C": "Leo Tolstoy",
+      "D": "Charles Dickens",
+      "answer": "A",
+      "explanation": "'Moby Dick' is a novel by Herman Melville, first published in 1851.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who founded the philosophical system of Catholicism?",
+      "A": "Thomas Aquinas",
+      "B": "Saint Augustine",
+      "C": "Martin Luther",
+      "D": "John Calvin",
+      "answer": "A",
+      "explanation": "Thomas Aquinas was an Italian philosopher and theologian, founder of the Catholic philosophical system in the 13th century.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which writer wrote the novel 'Wuthering Heights'?",
+      "A": "Harper Lee",
+      "B": "John Steinbeck",
+      "C": "William Faulkner",
+      "D": "Margaret Mitchell",
+      "answer": "C",
+      "explanation": "'Wuthering Heights' is a novel by William Faulkner, first published in 1939.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the first vaccine?",
+      "A": "Edward Jenner",
+      "B": "Louis Pasteur",
+      "C": "Robert Koch",
+      "D": "Joseph Lister",
+      "answer": "A",
+      "explanation": "Edward Jenner was an English doctor who invented the first vaccine, against smallpox, in 1796.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which city is known as the 'Venice of the North'?",
+      "A": "Amsterdam",
+      "B": "St. Petersburg",
+      "C": "Copenhagen",
+      "D": "Stockholm",
+      "answer": "B",
+      "explanation": "St. Petersburg is a city in Russia, in the northwest of the country, known as the 'Venice of the North'.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the antibiotic Streptomycin?",
+      "A": "Alexander Fleming",
+      "B": "Selman Waksman",
+      "C": "Paul Ehrlich",
+      "D": "Gerhard Domagk",
+      "answer": "B",
+      "explanation": "Selman Waksman was an American microbiologist who invented the antibiotic Streptomycin in 1943.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the first thermometer?",
+      "A": "Galileo Galilei",
+      "B": "Isaac Newton",
+      "C": "Anders Celsius",
+      "D": "Daniel Fahrenheit",
+      "answer": "D",
+      "explanation": "Daniel Fahrenheit was a German physicist who invented the Fahrenheit temperature scale in 1724.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which mathematician proposed the Four Color Theorem?",
+      "A": "Pierre-Simon Laplace",
+      "B": "Carl Friedrich Gauss",
+      "C": "Leonhard Euler",
+      "D": "Kenneth Appel and Wolfgang Haken",
+      "answer": "D",
+      "explanation": "The Four Color Theorem is one of the most famous problems in graph theory, solved by Kenneth Appel and Wolfgang Haken in 1976.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the antibiotic Ampicillin?",
+      "A": "Alexander Fleming",
+      "B": "Ernst Boris Chain",
+      "C": "Edward Abraham",
+      "D": "Selman Waksman",
+      "answer": "B",
+      "explanation": "Ernst Boris Chain was a German-British chemist and biologist who invented the antibiotic Ampicillin in 1961.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the antibiotic Penicillin?",
+      "A": "Alexander Fleming",
+      "B": "Ernst Boris Chain",
+      "C": "Edward Abraham",
+      "D": "Selman Waksman",
+      "answer": "A",
+      "explanation": "Alexander Fleming was an English scientist who invented the antibiotic Penicillin in 1928.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the first street lamp (steam street lamp)?",
+      "A": "Thomas Edison",
+      "B": "Joseph Swan",
+      "C": "Humphry Davy",
+      "D": "George Westinghouse",
+      "answer": "B",
+      "explanation": "Joseph Swan was an English scientist who invented the steam street lamp in 1878.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "The ancient Roman statue 'Laocoön and the Serpent' is currently displayed where?",
+      "A": "Louvre Museum, Paris",
+      "B": "Vatican Museum, Vatican City",
+      "C": "British Museum, London",
+      "D": "Metropolitan Museum, New York",
+      "answer": "B",
+      "explanation": "The statue 'Laocoön and the Serpent' is a famous ancient Roman work of art, currently displayed at the Vatican Museum.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the first electric spotlight?",
+      "A": "Joseph Swan",
+      "B": "Thomas Edison",
+      "C": "Humphry Davy",
+      "D": "Nikola Tesla",
+      "answer": "B",
+      "explanation": "Thomas Edison was an American inventor who invented the first electric spotlight in 1879.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which mathematician proposed Fermat's Last Theorem?",
+      "A": "Pierre-Simon Laplace",
+      "B": "Pierre de Fermat",
+      "C": "Carl Friedrich Gauss",
+      "D": "Leonhard Euler",
+      "answer": "B",
+      "explanation": "Fermat's Last Theorem is a famous problem in number theory, proposed by French mathematician Pierre de Fermat.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which physicist proposed the Theory of General Relativity?",
+      "A": "Albert Einstein",
+      "B": "Niels Bohr",
+      "C": "Max Planck",
+      "D": "Werner Heisenberg",
+      "answer": "A",
+      "explanation": "Albert Einstein was a German-Swiss physicist who proposed the Theory of General Relativity in 1915.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which programming language was used to develop the Unix operating system?",
+      "A": "C",
+      "B": "C++",
+      "C": "Python",
+      "D": "Java",
+      "answer": "A",
+      "explanation": "The C programming language was used to develop the Unix operating system from the 1970s.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the social network Facebook?",
+      "A": "Mark Zuckerberg",
+      "B": "Jack Dorsey",
+      "C": "Evan Spiegel",
+      "D": "Kevin Systrom",
+      "answer": "A",
+      "explanation": "Mark Zuckerberg founded Facebook, the largest social network in the world today.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the social network Twitter?",
+      "A": "Mark Zuckerberg",
+      "B": "Jack Dorsey",
+      "C": "Evan Spiegel",
+      "D": "Kevin Systrom",
+      "answer": "B",
+      "explanation": "Jack Dorsey founded Twitter, a social network that lets users send and read short messages.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the social network Snapchat?",
+      "A": "Mark Zuckerberg",
+      "B": "Jack Dorsey",
+      "C": "Evan Spiegel",
+      "D": "Kevin Systrom",
+      "answer": "C",
+      "explanation": "Evan Spiegel founded Snapchat, a social network that lets users share short-lived images and videos.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who invented the social network Instagram?",
+      "A": "Mark Zuckerberg",
+      "B": "Jack Dorsey",
+      "C": "Evan Spiegel",
+      "D": "Kevin Systrom",
+      "answer": "D",
+      "explanation": "Kevin Systrom founded Instagram, an image and video sharing social network, bought by Facebook in 2012.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "In number theory, in which year was Fermat's Last Theorem proven?",
+      "A": "1994",
+      "B": "2000",
+      "C": "1983",
+      "D": "1978",
+      "answer": "A",
+      "explanation": "Fermat's Last Theorem, stated by Pierre de Fermat, was proven by Andrew Wiles in 1994.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who wrote the book 'A Brief History of Time'?",
+      "A": "Richard Feynman",
+      "B": "Albert Einstein",
+      "C": "Stephen Hawking",
+      "D": "Carl Sagan",
+      "answer": "C",
+      "explanation": "'A Brief History of Time' is Stephen Hawking's famous book about cosmology, first published in 1988.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who was the first person to explain the existence of quarks?",
+      "A": "Murray Gell-Mann",
+      "B": "Richard Feynman",
+      "C": "Enrico Fermi",
+      "D": "Paul Dirac",
+      "answer": "A",
+      "explanation": "Murray Gell-Mann was an American physicist, the first to propose the existence of quarks in 1964.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "In which country was the world's first constitution written?",
+      "A": "United States",
+      "B": "Iceland",
+      "C": "India",
+      "D": "Ancient Greece",
+      "answer": "B",
+      "explanation": "The first constitution in the world was written in Iceland in 930, also known as the Althing, the first national council.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Which mathematician first proved that transcendental numbers exist?",
+      "A": "Joseph Liouville",
+      "B": "Carl Gauss",
+      "C": "Leonhard Euler",
+      "D": "David Hilbert",
+      "answer": "A",
+      "explanation": "Joseph Liouville was a French mathematician, the first to prove the existence of transcendental numbers in 1844.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who founded the Stoicism school of philosophy?",
+      "A": "Plato",
+      "B": "Aristotle",
+      "C": "Zeno of Citium",
+      "D": "Epicurus",
+      "answer": "C",
+      "explanation": "Zeno of Citium was an ancient Greek philosopher who founded the Stoicism school around the 3rd century BC.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "In which year was Isaac Newton's 'Principia Mathematica' first published?",
+      "A": "1687",
+      "B": "1726",
+      "C": "1665",
+      "D": "1704",
+      "answer": "A",
+      "explanation": "'Philosophiæ Naturalis Principia Mathematica', usually called Principia, is a book by Isaac Newton, first published in 1687.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who discovered the uncertainty principle in quantum mechanics?",
+      "A": "Niels Bohr",
+      "B": "Erwin Schrödinger",
+      "C": "Werner Heisenberg",
+      "D": "Max Planck",
+      "answer": "C",
+      "explanation": "Werner Heisenberg was a German physicist who discovered the uncertainty principle in 1927.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who found the solution to the Tetrahedron Theorem problem in mathematics?",
+      "A": "Leonhard Euler",
+      "B": "David Hilbert",
+      "C": "Euclid",
+      "D": "Carl Gauss",
+      "answer": "A",
+      "explanation": "Leonhard Euler was a Swiss mathematician, the first to propose a solution to the Tetrahedron Theorem problem in the 18th century.",
+      "difficulty": "superhard"
+    },
+    {
+      "question": "Who wrote 'Critique of Pure Reason'?",
+      "A": "Friedrich Nietzsche",
+      "B": "Immanuel Kant",
+      "C": "Georg Wilhelm Friedrich Hegel",
+      "D": "Arthur Schopenhauer",
+      "answer": "B",
+      "explanation": "'Critique of Pure Reason' is a philosophical work by Immanuel Kant, first published in 1781.",
+      "difficulty": "superhard"
+    }
+  ]
 }

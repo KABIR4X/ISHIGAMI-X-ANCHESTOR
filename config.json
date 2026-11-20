@@ -30,6 +30,11 @@
     "messageReaction": false,
     "messageUnsend": false
   },
+  "log": {
+    "level": "debug",
+    "file": true,
+    "keepDays": 7
+  },
   "nickNameBot": "anchestor",
   "prefix": "-",
   "timeZone": "Asia/Dhaka",

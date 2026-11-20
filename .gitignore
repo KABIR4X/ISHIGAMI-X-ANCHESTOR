@@ -13,3 +13,4 @@ downloads/*
 .update-manifest.json
 update-backup/
 *.new
+logs/

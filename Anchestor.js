@@ -171,5 +171,12 @@ process.on('SIGINT', () => { gracefulShutdown('SIGINT'); });
 process.on('SIGTERM', () => { gracefulShutdown('SIGTERM'); });
 
 global.utils.log.master('Anchestor', 'anchestor is starting...');
+{
+	const pkg = loadJson('package.json', false) || {};
+	const logCfg = config.log || {};
+	global.utils.log.info('Anchestor',
+		`v${pkg.version || '?'} | prefix "${config.prefix}" | db ${(config.database && config.database.type) || 'json'}` +
+		` | log level ${logCfg.level || 'debug'}${logCfg.file === false ? '' : ' + file'}`);
+}
 
 require('./bot/login/login');

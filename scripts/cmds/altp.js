@@ -2,12 +2,11 @@
 
 // who wants to be a millionaire — quiz game with two modes, a 30 second
 // timer per question and money rewards. questions live in Game/altp.json
-// next to this file (vietnamese quiz data, same as elite).
-//
-// elite bug fixed here: elite's level keys (easy/normal/hard/superhard)
-// don't exist in altp.json — the real keys are de/binhthuong/kho/sieukho,
-// so the elite game crashed on the first question. the mapping below is
-// what makes it actually work.
+// next to this file, english deck, four levels: easy / normal / hard /
+// superhard. each question has question, A-D options, answer and an
+// explanation. elite's deck used vietnamese keys (de/binhthuong/kho/
+// sieukho) that didn't match its own level names, so the elite game
+// crashed on the first question — the keys here match the levels now.
 
 const replyStore = require('../../bot/handler/replyStore');
 const quizData = require('./Game/altp.json');
@@ -16,15 +15,14 @@ const QUESTION_TIME = 30 * 1000;
 const spamLock = new Map();
 
 const LEVELS = [
-	{ key: 'de', label: 'Easy' },
-	{ key: 'normal', label: 'Normal', fileKey: 'binhthuong' },
-	{ key: 'hard', label: 'Hard', fileKey: 'kho' },
-	{ key: 'superhard', label: 'Super Hard', fileKey: 'sieukho' }
+	{ key: 'easy', label: 'Easy' },
+	{ key: 'normal', label: 'Normal' },
+	{ key: 'hard', label: 'Hard' },
+	{ key: 'superhard', label: 'Super Hard' }
 ];
 function pickQuestion(levelIndex) {
 	const lv = LEVELS[levelIndex];
-	const fileKey = lv.fileKey || lv.key;
-	const pool = quizData[fileKey] || [];
+	const pool = quizData[lv.key] || [];
 	if (!pool.length) return null;
 	return { question: pool[Math.floor(Math.random() * pool.length)], label: lv.label };
 }
@@ -41,7 +39,7 @@ async function addMoney(usersData, userID, amount) {
 async function askQuestion({ message, event, payload, picked }) {
 	const q = picked.question;
 	const info = await message.reply(
-		`❓ Question (${picked.label}):\n${q.cauhoi}\n\n` +
+		`❓ Question (${picked.label}):\n${q.question}\n\n` +
 		`A. ${q.A}\nB. ${q.B}\nC. ${q.C}\nD. ${q.D}\n\n⏱️ You have 30 seconds.`
 	);
 	if (info && info.messageID) {
@@ -133,12 +131,12 @@ module.exports = {
 		setTimeout(() => spamLock.delete(event.senderID), 1500);
 
 		const userAnswer = body.toUpperCase();
-		const correct = String(data.question.dapan || '').toUpperCase();
+		const correct = String(data.question.answer || '').toUpperCase();
 
 		if (userAnswer !== correct) {
 			await addMoney(usersData, event.senderID, -100000);
 			await message.reply(
-				`❌ Wrong answer.\nCorrect answer: ${correct}\n${data.question.giaithich}\n-100,000`
+				`❌ Wrong answer.\nCorrect answer: ${correct}\n${data.question.explanation}\n-100,000`
 			);
 			return true;
 		}

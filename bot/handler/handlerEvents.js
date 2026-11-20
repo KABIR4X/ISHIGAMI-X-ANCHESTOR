@@ -179,6 +179,7 @@ async function handlerEvents({ api, event }) {
 	if (role < 2 && event.senderID) {
 		const userData = await usersData.get(event.senderID);
 		if (userData && userData.banned && userData.banned.status) {
+			global.utils.log.dev('BLOCK', `banned user ${event.senderID} in ${event.threadID}`);
 			if (event.type === 'message')
 				await message.reply(global.utils.getText('handlerEvents', 'userBanned') +
 					(userData.banned.reason ? `\n${global.utils.getText('handlerEvents', 'reason', userData.banned.reason)}` : ''));
@@ -186,6 +187,7 @@ async function handlerEvents({ api, event }) {
 		}
 	}
 	if (role < 2 && threadData && threadData.banned && threadData.banned.status && event.type === 'message') {
+		global.utils.log.dev('BLOCK', `banned thread ${event.threadID}, sender ${event.senderID}`);
 		await message.reply(global.utils.getText('handlerEvents', 'threadBanned'));
 		return;
 	}
@@ -317,7 +319,10 @@ async function handlerEvents({ api, event }) {
 
 	// per thread banned commands from configCommands
 	const bannedHere = (global.client.commandBanned || {})[event.threadID] || [];
-	if (bannedHere.includes(command.config.name)) return;
+	if (bannedHere.includes(command.config.name)) {
+		global.utils.log.dev('BLOCK', `${prefix}${command.config.name} banned in ${event.threadID}, sender ${event.senderID}`);
+		return;
+	}
 
 	// admin only mode
 	if (config.adminOnly && config.adminOnly.enable && role < 2) {
@@ -328,7 +333,10 @@ async function handlerEvents({ api, event }) {
 
 	// per-thread admin-box-only: only group admins and bot admins may run
 	// commands here (toggled with -adboxonly)
-	if (threadData && threadData.data && threadData.data.adminBoxOnly && role < 1) return;
+	if (threadData && threadData.data && threadData.data.adminBoxOnly && role < 1) {
+		global.utils.log.dev('BLOCK', `${prefix}${command.config.name} blocked by adboxonly in ${event.threadID}, sender ${event.senderID}`);
+		return;
+	}
 
 	// role gate, with per-thread overrides from -setrole (0/1 only, role 2
 	// commands can never be overridden)
@@ -338,8 +346,14 @@ async function handlerEvents({ api, event }) {
 		const override = Number(setRole[command.config.name]);
 		if (override === 0 || override === 1) needRole = override;
 	}
-	if (needRole === 1 && role < 1) return message.reply(global.utils.getText('handlerEvents', 'onlyAdminBox'));
-	if (needRole === 2 && role < 2) return message.reply(global.utils.getText('handlerEvents', 'onlyAdminBot'));
+	if (needRole === 1 && role < 1) {
+		global.utils.log.dev('BLOCK', `${prefix}${command.config.name} needs group admin, sender ${event.senderID} in ${event.threadID}`);
+		return message.reply(global.utils.getText('handlerEvents', 'onlyAdminBox'));
+	}
+	if (needRole === 2 && role < 2) {
+		global.utils.log.dev('BLOCK', `${prefix}${command.config.name} needs bot admin, sender ${event.senderID} in ${event.threadID}`);
+		return message.reply(global.utils.getText('handlerEvents', 'onlyAdminBot'));
+	}
 
 	// anti inbox: some setups don't want commands in dm
 	if (config.antiInbox && !event.isGroup && role < 2) return;
@@ -350,16 +364,23 @@ async function handlerEvents({ api, event }) {
 		const keyCd = `${command.config.name}_${event.threadID}_${event.senderID}`;
 		const last = global.client.countDown[keyCd] || 0;
 		const waitMs = last + cdSec * 1000 - Date.now();
-		if (waitMs > 0)
+		if (waitMs > 0) {
+			global.utils.log.dev('BLOCK', `${prefix}${command.config.name} on cooldown for ${event.senderID} in ${event.threadID} (${Math.ceil(waitMs / 1000)}s left)`);
 			return message.reply(global.utils.getText('handlerEvents', 'cooldown', Math.ceil(waitMs / 1000), command.config.name));
+		}
 		global.client.countDown[keyCd] = Date.now();
 	}
 
+	// command audit: who ran what, where, how long it took, ok or failed
+	const startedAt = Date.now();
+	const who = `@${event.senderUsername || event.senderID} (${event.senderID})`;
 	try {
 		await command.onStart(ctx);
 		recordUsage(command);
+		global.utils.log.info('CMD', `${prefix}${command.config.name} by ${who} in ${event.threadID} [${Date.now() - startedAt}ms]`);
 	}
 	catch (err) {
+		global.utils.log.error('CMD', `${prefix}${command.config.name} by ${who} in ${event.threadID} [${Date.now() - startedAt}ms] FAILED: ${err.message}`);
 		global.utils.log.error('COMMAND', `${command.config.name}: ${err.stack || err.message}`);
 		await message.reply(`⚠️ ${command.config.name} hit an error: ${err.message}`);
 	}
