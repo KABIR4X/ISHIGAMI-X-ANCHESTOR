@@ -412,6 +412,48 @@ function buildApi(client) {
 	return api;
 }
 
+// the inbox poll never carries reply data (proven live 2026-11-20: the
+// reply fields come back null even for a real reply), so a message that
+// arrives without one gets its reply resolved from the thread itself —
+// the thread detail query returns quoted reply metadata, and the REST
+// thread fetch does too. one fetch per thread per burst: messages that
+// arrive together share the cached list, but a message missing from the
+// cached list always triggers a fresh fetch, so a stale cache can never
+// hide a reply.
+const replyEnrichCache = new Map(); // threadID -> { at, messages }
+const REPLY_ENRICH_TTL_MS = 10000;
+
+async function resolveReplyFromThread(client, event) {
+	const threadID = event.threadID;
+	const messageID = event.messageID;
+	if (!threadID || !messageID || !client || typeof client.getMessages !== 'function') return null;
+	const now = Date.now();
+	const entry = replyEnrichCache.get(threadID);
+	let messages = entry && (now - entry.at) < REPLY_ENRICH_TTL_MS ? entry.messages : null;
+	let found = messages ? messages.find((m) => String(m.id) === messageID) : undefined;
+	if (!found) {
+		try {
+			messages = await client.getMessages(threadID, { limit: 10 });
+		}
+		catch (err) {
+			const l = log();
+			if (l.dev) l.dev('REPLY', `could not fetch thread ${threadID} for reply lookup: ${err.message}`);
+			return null;
+		}
+		if (replyEnrichCache.size > 100) {
+			for (const [tid, e] of replyEnrichCache) if ((now - e.at) >= REPLY_ENRICH_TTL_MS) replyEnrichCache.delete(tid);
+		}
+		replyEnrichCache.set(threadID, { at: now, messages: Array.isArray(messages) ? messages : [] });
+		found = (messages || []).find((m) => String(m.id) === messageID);
+	}
+	if (!found || !found.replyTo || !found.replyTo.id) return null;
+	return {
+		messageID: String(found.replyTo.id),
+		senderID: String(found.replyTo.senderId || ''),
+		body: found.replyTo.text || ''
+	};
+}
+
 function normalizeMessage(msg) {
 	const mentions = {};
 	if (Array.isArray(msg.mentions)) for (const m of msg.mentions) mentions[m.userId] = m.username || '';
@@ -495,19 +537,14 @@ async function start() {
 	async function dispatchMessage(msg) {
 		if (msg.isSelf && !configIgApi.selfListen) return;
 		const event = normalizeMessage(msg);
-		// TEMPORARY diagnostic for the reply bug (v2.3.0): when a command
-		// arrives, log what the poll actually saw — the parsed reply plus
-		// the raw payload's shape — so the next -unsend test shows whether
-		// the reply data is missing from the payload or just misparsed.
-		// remove once replies are proven working.
-		if (event.body && config.prefix && event.body.startsWith(config.prefix)) {
-			const raw = msg.raw && typeof msg.raw === 'object' ? msg.raw : {};
-			const rawKeys = Object.keys(raw);
-			const replyBits = {};
-			for (const k of rawKeys) if (/repl|quote/i.test(k)) replyBits[k] = raw[k];
-			global.utils.log.dev('REPLY-DBG',
-				`cmd "${event.body.slice(0, 30)}" replyTo=${JSON.stringify(event.messageReply)}` +
-				` rawKeys=[${rawKeys.join(',')}] rawReply=${JSON.stringify(replyBits).slice(0, 300)}`);
+		// the inbox poll never carries reply data, so resolve it from the
+		// thread itself when the poll didn't see one (see above)
+		if (!event.messageReply) {
+			const reply = await resolveReplyFromThread(client, event);
+			if (reply) {
+				event.messageReply = reply;
+				global.utils.log.dev('REPLY', `resolved reply for ${event.messageID} -> ${reply.messageID}`);
+			}
 		}
 		const info = await getThreadInfoCached(client, event.threadID);
 		event.isGroup = info.isGroup;
@@ -598,5 +635,6 @@ module.exports = start;
 module.exports.start = start;
 module.exports.buildApi = buildApi;
 module.exports.normalizeMessage = normalizeMessage;
+module.exports.resolveReplyFromThread = resolveReplyFromThread;
 module.exports.resolveSessionOptions = resolveSessionOptions;
 module.exports.sessionFile = sessionFile;
