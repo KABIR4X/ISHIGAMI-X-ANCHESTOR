@@ -45,6 +45,7 @@ function defaultRecord(userID) {
 		data: {},
 		banned: { status: false, reason: null, date: null },
 		exp: 0,
+		money: 0,
 		messageCount: 0,
 		createdAt: Date.now()
 	};
@@ -85,6 +86,15 @@ const usersData = {
 	async getAll() {
 		await ensureStore();
 		return store.getAll();
+	},
+
+	// display name for a user id, from the cached record (kept fresh by the
+	// handler on every message); falls back to the username, then the id
+	async getName(userID) {
+		await ensureStore();
+		const rec = store.get(String(userID));
+		if (rec) return rec.name || rec.username || String(userID);
+		return String(userID);
 	},
 
 	async create(userID, data = {}) {

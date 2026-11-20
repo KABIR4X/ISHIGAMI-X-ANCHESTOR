@@ -1,28 +1,31 @@
+'use strict';
+
+const { resolveTargets } = require('./_ig/targets');
+
 module.exports = {
 	config: {
-		name: "uid",
-		aliases: ["id"],
-		version: "1.0.0",
-		author: "xemonbae01",
+		name: 'uid',
+		aliases: ['id'],
+		version: '2.0.0',
+		author: 'xemonbae01',
 		countDown: 2,
 		role: 0,
-		description: { en: "get your instagram id or the replied user's id" },
-		category: "info",
-		guide: { en: "   {pn}\n   reply to a message + {pn}" }
+		description: { en: 'get instagram ids — yours, a reply, a mention, @username or a profile link' },
+		category: 'info',
+		guide: { en: '   {pn}: your own id'
+			+ '\n   {pn} @user: id of the tagged user'
+			+ '\n   {pn} <profile link>: id of that profile'
+			+ '\n   reply to a message + {pn}: id of the sender' }
 	},
 
-	onStart: async function ({ message, event, api }) {
-		if (event.messageReply && event.messageReply.senderID) {
-			let extra = "";
-			try {
-				const info = await api.getUserInfo(event.messageReply.senderID);
-				const u = info[event.messageReply.senderID];
-				if (u && u.username) extra = ` (@${u.username})`;
-			} catch { /* id alone is fine */ }
-			return message.reply(`${event.messageReply.senderID}${extra}`);
-		}
-		let me = `${event.senderID}`;
-		if (event.senderUsername) me += ` (@${event.senderUsername})`;
-		return message.reply(me);
+	onStart: async function ({ message, event, args, api }) {
+		const { targets, notFound } = await resolveTargets({ api, event, args });
+		const lines = targets.map((t) => {
+			if (t.username) return `@${t.username}: ${t.id}`;
+			if (t.name) return `${t.name}: ${t.id}`;
+			return String(t.id);
+		});
+		for (const nf of notFound) lines.push(`${nf}: not found`);
+		return message.reply(lines.join('\n') || 'no user found');
 	}
 };

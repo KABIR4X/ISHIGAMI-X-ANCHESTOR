@@ -1,9 +1,12 @@
 'use strict';
 
-// makes sure thread/user records exist and keeps the counters moving
+// makes sure thread/user records exist and keeps the counters moving.
+// returns { levelUp: { userID, oldLevel, newLevel } } when the sender just
+// crossed a level, so the handler can send the rankup message.
 async function handlerCheckData({ event, threadsData, usersData }) {
 	const threadID = event.threadID ? String(event.threadID) : null;
 	const senderID = event.senderID ? String(event.senderID) : null;
+	let levelUp = null;
 
 	if (threadID) {
 		const thread = await threadsData.get(threadID);
@@ -26,10 +29,16 @@ async function handlerCheckData({ event, threadsData, usersData }) {
 		if (event.senderUsername && user.username !== event.senderUsername) patch.username = event.senderUsername;
 		if (event.type === 'message') {
 			patch.messageCount = (user.messageCount || 0) + 1;
-			patch.exp = (user.exp || 0) + 1;
+			const oldExp = user.exp || 0;
+			patch.exp = oldExp + 1;
+			const oldLevel = global.utils.expToLevel(oldExp);
+			const newLevel = global.utils.expToLevel(patch.exp);
+			if (newLevel > oldLevel) levelUp = { userID: senderID, oldLevel, newLevel };
 		}
 		if (Object.keys(patch).length) await usersData.set(senderID, patch);
 	}
+
+	return levelUp ? { levelUp } : null;
 }
 
 // role: 2 bot admin, 1 group admin, 0 everyone

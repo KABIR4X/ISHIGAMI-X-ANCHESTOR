@@ -157,8 +157,9 @@ async function handlerEvents({ api, event }) {
 	const message = createMessage(api, event);
 	event.body = event.body || '';
 
+	let checkResult = null;
 	try {
-		await handlerCheckData({ event, threadsData, usersData });
+		checkResult = await handlerCheckData({ event, threadsData, usersData });
 	}
 	catch (err) {
 		global.utils.log.error('CHECK DATA', err.message);
@@ -228,6 +229,24 @@ async function handlerEvents({ api, event }) {
 	}
 
 	// pipeline from here: quote replies -> reply sessions -> onChat -> command
+
+	// rankup: the sender just crossed a level while chatting
+	if (checkResult && checkResult.levelUp) {
+		const { oldLevel, newLevel } = checkResult.levelUp;
+		const rankupCfg = threadData && threadData.data ? threadData.data.rankup : undefined;
+		if (rankupCfg !== false) {
+			const template = (rankupCfg && rankupCfg.message)
+				|| '🎉 {userName} just reached level {currentRank}';
+			const name = event.senderName || event.senderUsername || event.senderID;
+			const text = template
+				.split('{userName}').join(name)
+				.split('{userNameTag}').join(name)
+				.split('{oldRank}').join(String(oldLevel))
+				.split('{currentRank}').join(String(newLevel));
+			try { await message.send(text); }
+			catch { /* a failed rankup ping never breaks the command */ }
+		}
+	}
 
 	// replies bound to a sent message (author locked, thread locked, ttl)
 	if (event.messageReply && event.messageReply.messageID) {
@@ -307,8 +326,18 @@ async function handlerEvents({ api, event }) {
 			return message.reply(global.utils.getText('handlerEvents', 'adminOnly'));
 	}
 
-	// role gate
-	const needRole = command.config.role || 0;
+	// per-thread admin-box-only: only group admins and bot admins may run
+	// commands here (toggled with -adboxonly)
+	if (threadData && threadData.data && threadData.data.adminBoxOnly && role < 1) return;
+
+	// role gate, with per-thread overrides from -setrole (0/1 only, role 2
+	// commands can never be overridden)
+	let needRole = command.config.role || 0;
+	const setRole = threadData && threadData.data && threadData.data.setRole;
+	if (setRole && setRole[command.config.name] !== undefined && needRole < 2) {
+		const override = Number(setRole[command.config.name]);
+		if (override === 0 || override === 1) needRole = override;
+	}
 	if (needRole === 1 && role < 1) return message.reply(global.utils.getText('handlerEvents', 'onlyAdminBox'));
 	if (needRole === 2 && role < 2) return message.reply(global.utils.getText('handlerEvents', 'onlyAdminBot'));
 

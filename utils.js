@@ -100,6 +100,15 @@ function levenshtein(a, b) {
 	return prev[b.length];
 }
 
+// exp <-> level, same curve as the messenger bot (deltaNext = 5)
+const DELTA_NEXT_LEVEL = 5;
+function expToLevel(exp, delta = DELTA_NEXT_LEVEL) {
+	return Math.floor((1 + Math.sqrt(1 + 8 * (Number(exp) || 0) / delta)) / 2);
+}
+function levelToExp(level, delta = DELTA_NEXT_LEVEL) {
+	return Math.floor(((Math.pow(level, 2) - level) * delta) / 2);
+}
+
 // did-you-mean for command names. candidates can be plain names or
 // { name, display } when an alias should point at its canonical command
 function suggest(input, candidates, max = 3) {
@@ -140,5 +149,7 @@ module.exports = {
 	delay,
 	splitOnce,
 	levenshtein,
-	suggest
+	suggest,
+	expToLevel,
+	levelToExp
 };

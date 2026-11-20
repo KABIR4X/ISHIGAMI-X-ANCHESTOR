@@ -17,6 +17,17 @@ module.exports = {
 			if (typeof p === "string") return p;
 			return p.username ? `@${p.username}` : String(p.id || p);
 		});
+		const threadName = event.threadName || (await threadsData.get(event.threadID, "threadName")) || "";
+		const custom = await threadsData.get(event.threadID, "data.welcomeText");
+		if (custom) {
+			const text = String(custom)
+				.split("{userName}").join(names.join(", "))
+				.split("{userNameTag}").join(names.join(", "))
+				.split("{boxName}").join(threadName)
+				.split("{threadName}").join(threadName)
+				.split("{multiple}").join(names.length > 1 ? "you guys" : "you");
+			return message.send(text);
+		}
 		await message.send(`welcome ${names.join(", ")} 👋\ntype ${global.utils.getPrefix(event.threadID)}help to see what i can do`);
 	}
 };

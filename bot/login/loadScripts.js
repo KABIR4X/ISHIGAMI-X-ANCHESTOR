@@ -2,9 +2,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
-const cmdsDir = path.join(__dirname, '..', '..', 'scripts', 'cmds');
-const eventsDir = path.join(__dirname, '..', '..', 'scripts', 'events');
+const rootDir = path.join(__dirname, '..', '..');
+const cmdsDir = path.join(rootDir, 'scripts', 'cmds');
+const eventsDir = path.join(rootDir, 'scripts', 'events');
 
 function log() {
 	return (global.utils && global.utils.log) || console;
@@ -63,6 +65,8 @@ function unregisterRecord(record) {
 			if (record.key && A.aliases.get(alias) === record.key) A.aliases.delete(alias);
 		A.onChat = A.onChat.filter((m) => m !== record.module);
 		A.onFirstChat = A.onFirstChat.filter((m) => m !== record.module);
+		A.onEvent = A.onEvent.filter((m) => m !== record.module);
+		A.onAnyEvent = A.onAnyEvent.filter((m) => m !== record.module);
 	}
 	else {
 		if (record.key && A.eventCommands.get(record.key) === record.module) A.eventCommands.delete(record.key);
@@ -129,9 +133,34 @@ function registerCommand(mod, file) {
 	// hooks are per module, not per name, so shadowed modules still work
 	if (typeof mod.onChat === 'function' && !A.onChat.includes(mod)) A.onChat.push(mod);
 	if (typeof mod.onFirstChat === 'function' && !A.onFirstChat.includes(mod)) A.onFirstChat.push(mod);
+	// messenger parity: commands may also listen for thread events
+	// (antiout, autosetname...). the handler only runs these for event /
+	// thread_update / message_unsend, never for plain messages.
+	if (typeof mod.onEvent === 'function' && !A.onEvent.includes(mod)) A.onEvent.push(mod);
+	if (typeof mod.onAnyEvent === 'function' && !A.onAnyEvent.includes(mod)) A.onAnyEvent.push(mod);
 
 	recs.set(recKey, record);
+	runOnLoad(mod, file);
 	return record;
+}
+
+// onLoad runs once per load, after registration. a throwing onLoad is logged
+// loudly but never fails the load — one bad module must not kill the boot.
+function runOnLoad(mod, file) {
+	if (typeof mod.onLoad !== 'function') return;
+	try {
+		const out = mod.onLoad({
+			api: global.Anchestor.api,
+			threadsData: global.db && global.db.threadsData,
+			usersData: global.db && global.db.usersData,
+			globalData: global.db && global.db.globalData
+		});
+		if (out && typeof out.catch === 'function')
+			out.catch((err) => log().error('SCRIPTS', `onLoad of ${file} failed: ${err.message}`));
+	}
+	catch (err) {
+		log().error('SCRIPTS', `onLoad of ${file} failed: ${err.message}`);
+	}
 }
 
 function registerEvent(mod, file) {
@@ -164,6 +193,7 @@ function registerEvent(mod, file) {
 	if (typeof mod.onStart === 'function' && !A.onAnyEvent.includes(mod)) A.onAnyEvent.push(mod);
 
 	recs.set(recKey, record);
+	runOnLoad(mod, file);
 	return record;
 }
 
@@ -375,6 +405,33 @@ function unloadEvent(input) {
 	return record.name;
 }
 
+// messenger parity for `cmd install`: scan a code blob for requires and
+// npm-install whatever is missing, so an installed command just works
+const installedPackages = new Set();
+function ensurePackages(code) {
+	const matches = String(code || '').match(/require\(\s*[`'"]([^`'"]+)[`'"]\s*\)/g) || [];
+	const names = [...new Set(matches.map((m) => m.match(/[`'"]([^`'"]+)[`'"]/)[1]))]
+		.filter((p) => !p.startsWith('.') && !p.startsWith('/') && !p.startsWith('node:'));
+	const builtins = new Set(require('module').builtinModules.map((m) => m.replace(/^node:/, '')));
+	for (let name of names) {
+		name = name.startsWith('@') ? name.split('/').slice(0, 2).join('/') : name.split('/')[0];
+		if (builtins.has(name) || installedPackages.has(name)) continue;
+		installedPackages.add(name);
+		if (fs.existsSync(path.join(rootDir, 'node_modules', name))) continue;
+		log().info('SCRIPTS', `installing missing package ${name}...`);
+		execSync(`npm install ${name} --save`, { stdio: 'pipe', cwd: rootDir });
+	}
+}
+
+// write raw code to scripts/cmds and load it, like the messenger bot's install
+function installCommand(fileName, rawCode) {
+	if (!/^[A-Za-z0-9_-]+\.js$/.test(String(fileName))) throw new Error('invalid file name');
+	if (!rawCode || !String(rawCode).trim()) throw new Error('empty code');
+	fs.writeFileSync(path.join(cmdsDir, fileName), String(rawCode));
+	ensurePackages(rawCode);
+	return loadOneCommand(fileName, true).name;
+}
+
 module.exports = loadScripts;
 module.exports.loadScripts = loadScripts;
 module.exports.loadCommand = loadCommand;
@@ -385,3 +442,5 @@ module.exports.loadOneCommand = loadOneCommand;
 module.exports.loadOneEvent = loadOneEvent;
 module.exports.getRegistryReport = getRegistryReport;
 module.exports.unregisterRecord = unregisterRecord;
+module.exports.ensurePackages = ensurePackages;
+module.exports.installCommand = installCommand;

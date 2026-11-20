@@ -9,6 +9,9 @@ Developed by **xemonbae01** (Redwan Ahemed) — https://github.com/xemonbae01
 ## Features
 
 - Command system with aliases, categories, cooldowns and role levels (0 everyone, 1 group admin, 2 bot admin)
+- Economy and levels: money, a bank with interest, daily gifts, slots and dice, ranks with level-up messages
+- Admin tooling: bans, warns, a bad-word filter, anti-out, welcome/goodbye messages, per-thread command roles
+- `cmd install` / `event install` — add commands and events from a url or pasted code at runtime
 - Event system for thread updates — welcomes, goodbyes, thread info sync, console logging
 - Per-thread prefix (changeable in chat, with reaction confirmation), global prefix for bot admins
 - `onChat`, `onReply` and `onReaction` hooks so commands can hold conversations
@@ -145,7 +148,7 @@ Default prefix is `-`. Type just `prefix` in a chat to see the current one.
 | --- | --- |
 | `help [command]` | list commands or show one in detail |
 | `ping` | latency + uptime check |
-| `uid` | your id, or the replied user's id |
+| `uid [@user]` | your id, or a reply / mention / @username / profile link's id |
 | `userinfo [@user]` | profile + friendship info |
 | `spy [@user]` | deep intel: profile, counts, friendship status, current note, pic |
 | `threadinfo` | this thread's info, members and nicknames |
@@ -185,7 +188,51 @@ Default prefix is `-`. Type just `prefix` in a chat to see the current one.
 | `following [@user]` | who a user follows (first 20) |
 | `followreq` | pending follow requests — reply with a number to approve, `no <number>` to ignore (bot admin) |
 | `block / unblock @user` | block / unblock on Instagram (bot admin) |
-| `cmd load/unload/reload <name>` | manage command files at runtime (bot admin) |
+| `cmd load/unload/reload/install/collisions <name>` | manage command files at runtime, install from url or pasted code (bot admin) |
+| `event load/unload/list/install <name>` | manage event scripts at runtime (bot admin) |
+| `money [@user]` | your balance, or someone else's (reply / mention / @username) |
+| `bank register/check/send/withdraw/history` | savings bank — 1.5% fee, interest every 5h, closed Sundays |
+| `daily [info]` | daily gift, bigger later in the week (24h cooldown) |
+| `pay <amount> @user` | send money (5% fee, min 1000$, `all` supported) |
+| `slot <bet>` | 3×3 slot machine with a shared jackpot |
+| `txiu create/info/leave/roll/end` | multiplayer tai xiu dice table |
+| `tx <bet> <big/small/...>` | solo tai xiu dice |
+| `rank [@user]` | level card — exp bar, server rank, messages, money |
+| `top [exp/money/msg/thread]` | leaderboards (money asks group or server by reply) |
+| `setmoney <add/remove/set> <amount> [@user]` | set someone's balance (bot admin) |
+| `ban [@user] / unban / check / list` | box ban + kick, re-kick on rejoin |
+| `warn [@user] [reason] / unwarn / list / listban` | warnings, 3 = global ban + kick |
+| `setalias add/remove <cmd> <alias>` | custom global aliases, applied live + at boot (bot admin) |
+| `shortcut add <trigger> => <reply> / list / del` | text auto-replies, `{name}` becomes the sender |
+| `rules [add/edit/move/delete/remove]` | per-thread rules, reply with a number to view one |
+| `resend on/off` | repost deleted messages (anti-delete) |
+| `badwords add/delete/list/on/off/unwarn` | bad-word filter, strikes count as warns |
+| `filteruser <count>` | prune low-activity members (reaction confirm) |
+| `setwelcome / setleave <text/on/off>` | custom welcome / goodbye messages |
+| `tid` | this thread's id |
+| `clean` | clear the downloads temp dir (Y/N reply) |
+| `backupdata` | one json backup of users + threads + global (bot admin) |
+| `loadconfig` | reload config.json + configCommands.json from disk (bot admin) |
+| `refresh thread/user` | re-sync stored thread / user info from Instagram |
+| `antiout [check/list]` | toggle re-adding anyone who leaves |
+| `antichangeinfobox name/theme on/off` | lock the group title / theme |
+| `autosetname <template>` | auto-nickname new members |
+| `adboxonly on/off` | only group admins can use the bot in this thread |
+| `setrole <cmd> <0/1/default>` | per-thread command roles (bot-admin commands can't change) |
+| `setlang <code> / list` | bot language (bot admin) |
+| `setrankup <text/reset/on/off>` | custom level-up message, or turn it off |
+| `thread find/ban/unban/info` | manage stored threads |
+| `user find/ban/unban` | manage stored users (bot admin for bans) |
+| `file <path>` | browse bot files from chat (allowlisted, bot admin) |
+| `setbox` | refresh all stored threads from Instagram |
+| `afk [reason]` | afk mode — covers your mentions, catches you up when you're back |
+| `fight @user` | turn-based duel in chat |
+| `altp` | Who Wants to Be a Millionaire quiz (questions in Vietnamese) |
+| `gay [@user]` | gay meter, text version |
+| `tarot [card]` | tarot reading from a built-in 78-card deck |
+| `anc` | system dashboard — uptime, CPU, RAM, disk |
+| `system` | detailed hardware / process readout |
+| `sc @user` | share someone's profile card (`sharecontact`) |
 | `restart` | restart the bot (bot admin) |
 | `update [check\|now]` | check for new code, or update + restart into it (bot admin) |
 | `eval <code>` | run js (bot admin only) |
@@ -216,12 +263,14 @@ the same `config.name` is *shadowed*, not dropped: it stays reachable through
 its unique aliases (aliases are claimed one by one across names and aliases —
 a taken alias is skipped with a warning, the rest still register). A shadowed
 module with no free alias left loads *dormant*: counted in the boot summary
-(`48 commands and 4 events loaded (0 shadowed, 0 dormant)`) with the reason
+(`94 commands and 4 events loaded (0 shadowed, 0 dormant)`) with the reason
 logged. Unloading is ownership-exact — removing the winner frees only its name
 and its own aliases, and reloading a shadowed file afterwards lets it win the
 name. `-cmd collisions` prints the full registry story, `-cmd reloadall`
 reloads everything, and custom aliases saved under the `setalias` global data
-are applied after file loading through the same rules.
+are applied after file loading through the same rules. Commands can also run
+`onLoad` once at boot (e.g. the bank's interest timer) and `onEvent` for
+thread updates and unsends.
 
 **Reply system.** `replyStore.setEntry(messageID, { commandName, threadID,
 author, ttlMs, data })` binds a flow to a bot message. Entries are author
@@ -242,6 +291,15 @@ answer with the remaining wait time; bot admins skip them. Unknown commands
 get did-you-mean suggestions (`-pign` → "Did you mean: -pin, -ping?") unless
 `hideNotiMessage.commandNotFound` is on. A command that throws gets its user
 one clean `⚠️ <cmd> hit an error: ...` reply and the bot keeps running.
+
+**Per-thread roles and rankups.** `-setrole` overrides a command's role inside
+one thread (0/1 only, bot-admin commands never change) and the role gate reads
+it. Every message earns +1 exp; crossing a level sends a rank-up message unless
+the thread turned it off (`-setrankup off`) or set custom text.
+`-adboxonly` silences the bot for non-admins in one thread. Commands resolve
+their targets through one shared helper (`scripts/cmds/_ig/targets.js`) — a
+reply, mention, @username, profile link or numeric id all become the same
+target list.
 
 **Sending.** `message.reply` / `message.send` split long texts into ~900
 character chunks on line boundaries and resolve with the last chunk's info,
@@ -328,7 +386,7 @@ anchestor/
 │   └── data/                 # threads.json, users.json, global.json
 ├── ig-chat-api/              # bundled Instagram chat client (see Credits)
 ├── scripts/
-│   ├── cmds/                 # commands (48)
+│   ├── cmds/                 # commands (94)
 │   ├── events/               # events
 │   └── migrate-to-mongo.js   # json -> mongodb import (npm run migrate:mongo)
 ├── downloads/                # -dl output (git-ignored except .gitkeep)
@@ -373,7 +431,9 @@ module.exports = {
 ```
 
 Commands get `{ api, message, event, args, threadsData, usersData, globalData, commandName, getLang, role, prefix }`.
-Optional hooks: `onChat` (runs on every message, return `true` if handled), `onReply`
+Optional hooks: `onLoad` (runs once when the file loads), `onEvent` (thread
+updates and unsends only — message text goes through `onChat`), `onChat`
+(runs on every message, return `true` if handled), `onReply`
 (fires when someone replies to a message you registered with
 `replyStore.setEntry(...)` from `bot/handler/replyStore.js` — see the Framework
 section for TTLs, author locks and `Reply.keep()` / `Reply.end()`),
