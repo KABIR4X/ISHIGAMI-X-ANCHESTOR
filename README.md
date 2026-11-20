@@ -354,8 +354,7 @@ fresh key hash in.
 Honest limits: obfuscation plus the key check stops casual copying — lift
 the folder into another bot and it won't run. A determined reverser with
 time can still pull it apart; nothing in a public repo is unbreakable.
-The base library is MIT (jarif098, see `ig-chat-api/LICENSE`) — anyone can
-still use the original; this protects this bot's vendored copy.
+The client code is MIT-licensed (see `ig-chat-api/LICENSE`).
 
 ## MongoDB
 
@@ -506,8 +505,7 @@ them — that's what `-edit last` runs on.
 
 ## Credits
 
-- **ig-chat-api** (in `ig-chat-api/`) is based on **instagram-chat-api by JARiF (jarif098)** — https://github.com/jarif098/instagram-chat-api — MIT licensed, license kept in `ig-chat-api/LICENSE`.
-- anchestor itself is developed by **xemonbae01**.
+- anchestor is developed by **xemonbae01**.
 
 ## License
 
