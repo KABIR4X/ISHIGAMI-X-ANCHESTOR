@@ -1,5 +1,5 @@
 {
-  "adminBot": [],
+  "adminBot": [40587339847],
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
@@ -35,12 +35,12 @@
     "file": true,
     "keepDays": 7
   },
-  "nickNameBot": "anchestor",
+  "nickNameBot": "Scarllet bitch",
   "prefix": "-",
   "timeZone": "Asia/Dhaka",
   "whiteListMode": {
     "enable": false,
-    "whiteListIds": []
+    "whiteListIds": [40587339847]
   },
   "whiteListModeThread": {
     "enable": false,
