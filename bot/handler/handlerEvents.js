@@ -205,6 +205,7 @@ async function handlerEvents({ api, event }) {
 
 	// reactions bound to a sent message (-prefix confirm etc)
 	if (event.type === 'message_reaction') {
+		global.utils.log.dev('REACTION', `${event.reaction || '?'} by ${event.senderID} on ${event.messageID} in ${event.threadID}`);
 		const entry = A.onReaction.get(event.messageID);
 		if (entry) {
 			if (entry.senderID && String(entry.senderID) !== String(event.senderID)) return;
@@ -221,6 +222,8 @@ async function handlerEvents({ api, event }) {
 				catch (err) { global.utils.log.error('onReaction', `${command.config.name}: ${err.stack || err.message}`); }
 			}
 		}
+		// event scripts get reactions too (onEvent/onAnyEvent), same as unsends
+		await runEventCommands({ api, event, message, role, prefix });
 		return;
 	}
 

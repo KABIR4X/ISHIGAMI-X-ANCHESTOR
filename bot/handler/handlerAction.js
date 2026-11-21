@@ -62,6 +62,12 @@ function createMessage(api, event) {
 		const ring = global.temp.botMessages[threadID] || (global.temp.botMessages[threadID] = []);
 		ring.push(entry);
 		if (ring.length > 10) ring.shift();
+		// watch what the bot just sent for reactions — the inbox summary
+		// omits reaction changes, so without this the bot never sees
+		// anyone react to its messages. 15 min window, refreshed on
+		// every send in the thread.
+		if (api && typeof api.watchReaction === 'function')
+			api.watchReaction(threadID, info.messageID);
 	}
 
 	// sends text in chunks, resolves with the info of the LAST chunk so

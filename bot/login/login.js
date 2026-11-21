@@ -198,6 +198,17 @@ function buildApi(client) {
 			}
 		},
 
+		// watch a bot-sent message for reactions (thread detail gets polled
+		// for the window, so reactions fire even when the inbox summary
+		// omits them). sync, never throws — safe to call on every send.
+		watchReaction(threadID, messageID, durationMs) {
+			try {
+				if (client && typeof client.watchReactionMessage === 'function')
+					client.watchReactionMessage(String(threadID), messageID ? String(messageID) : null, durationMs);
+			}
+			catch { /* watching is best-effort, never break a send over it */ }
+		},
+
 		async unsendMessage(messageID, threadID, callback) {
 			try {
 				const res = await client.unsendMessage(String(threadID), String(messageID));
